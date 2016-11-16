@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>自动选择文本框/编辑框中的文字</title>
+<script type="text/javascript">
+function Myselect_txt(){
+  if (document.form1.titleNAME.focus){
+    document.form1.titleNAME.select();}
+}
+function Myselect_txtarea(){
+  if (document.form1.contentNAME.focus){
+    document.form1.contentNAME.select();}
+}
+</script>
+</head>
+<body style="font-size:12px">
+<table width="443" height="97" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#f9f9f9">
+  <form name="form1">
+    <tr bgcolor="#214994">
+      <td height="25" colspan="2"><div align="center"><font color="#FFFFFF">新闻信息修改</font></div></td>
+    </tr>
+    <tr>
+      <td width="80" height="28"><div align="right"><font color="#214994">新闻标题：</font></div></td>
+      <td width="363"><input name="titleNAME" type="text" size="50" value="今日新闻头条" onClick="Myselect_txt()"></td>
+    </tr>
+    <tr>
+      <td height="20"><div align="right"><font color="#214994">新闻内容：</font></div></td>
+      <td rowspan="2"><textarea name="contentNAME" cols="50" rows="6" onClick="Myselect_txtarea()">今日,据相关方面报道,...</textarea></td>
+    </tr>
+    <tr>
+      <td height="10">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="32" colspan="2">
+        <div align="center">
+          <input name="add" type="submit" id="add" value="添加">
+&nbsp;
+          <input name="Submit" type="reset" value="重置">
+      </div></td>
+    </tr>
+  </form>
+</table>
+</body>
+</html>

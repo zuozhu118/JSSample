@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>网页拾色器</title>
+    <link rel="stylesheet" href="Css/style.css" />
+</head>
+<body>
+    <table width="424" height="205" border="0" cellpadding="-2" cellspacing="-2" class="tableBorder">
+        <tr>
+            <td width="8" height="32" background="Images/board_left.gif">
+                &nbsp;
+            </td>
+            <td width="426" background="Images/board_left.gif" style="color: #FFFFFF">
+                ≡ 签写留言 ≡
+            </td>
+            <td width="7" background="Images/board_right.gif">
+                &nbsp;
+            </td>
+        </tr>
+        <tr valign="top">
+            <td height="171" colspan="3">
+                <table width="100%" height="129" border="0" cellpadding="-2" cellspacing="-2">
+                    <tr>
+                        <td valign="top">
+                            <table width="100%" height="292" border="0" cellpadding="-2" cellspacing="-2" class="tableBorder_Top">
+                                <tr>
+                                    <td width="236" height="5">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="263" colspan="3" valign="top">
+                                        <form action="" method="post" name="form1">
+                                        <table width="100%" border="0" cellspacing="-2" cellpadding="-2">
+                                            <tr>
+                                                <td width="11%" height="74" align="center">
+                                                    表情：
+                                                </td>
+                                                <td width="89%">
+                                                    <input name="emote" type="radio" class="noborder" value="0" checked>
+                                                    <img height="20" src="Images/Face/face0.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="1">
+                                                    <img height="19" src="Images/Face/face1.gif" width="19" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="2">
+                                                    <img height="20" src="Images/Face/face2.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="3">
+                                                    <img height="20" src="Images/Face/face3.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="4">
+                                                    <img height="20" src="Images/Face/face4.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="5">
+                                                    <img height="20" src="Images/Face/face5.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="7">
+                                                    <img height="20" src="Images/Face/face7.gif" width="20" align="middle" border="0"><br>
+                                                    <input name="emote" type="radio" class="noborder" value="8">
+                                                    <img height="20" src="Images/Face/face8.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="9">
+                                                    <img height="20" src="Images/Face/face9.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="10">
+                                                    <img height="20" src="Images/Face/face10.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="11">
+                                                    <img height="20" src="Images/Face/face11.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="12">
+                                                    <img height="20" src="Images/Face/face12.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="13">
+                                                    <img height="20" src="Images/Face/face13.gif" width="20" align="middle" border="0">
+                                                    <input name="emote" type="radio" class="noborder" value="14">
+                                                    <img height="20" src="Images/Face/face14.gif" width="20" align="middle" border="0"><br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="46" colspan="2" align="center" style="padding-left: 10px">
+                                                    <table width="82%" height="25" border="0" cellpadding="-2" cellspacing="-2">
+                                                        <tr>
+                                                            <td width="33%">
+                                                                <img src="Images/B.gif" width="21" height="20">&nbsp;<img src="Images/I.gif" width="21"
+                                                                    height="20">&nbsp;<img src="Images/U.gif" width="21" height="20">
+                                                            </td>
+                                                            <td width="67%">
+                                                                字体
+                                                                <select name="font" class="wenbenkuang" id="font">
+                                                                    <option value="宋体" selected>宋体</option>
+                                                                    <option value="黑体">黑体</option>
+                                                                    <option value="隶书">隶书</option>
+                                                                    <option value="楷体">楷体</option>
+                                                                </select>
+                                                                字号<span class="pt9">
+                                                                    <select name="size" class="wenbenkuang">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3" selected>3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                    </select>
+                                                                    <script language="javascript">
+                                                                        function colorpick(field) {
+                                                                            var rtn = window.showModalDialog("color.htm", "", "dialogWidth:225px;dialogHeight:170px;status:no;help:no;scrolling=no;scrollbars=no");
+                                                                            if (rtn != null)
+                                                                                field.style.background = rtn;
+                                                                            return;
+                                                                        }
+                                                                    </script>
+                                                                    颜色
+                                                                    <input name="color" type="text" id="color" size="3" readonly="yes" style="background-color: #000000"
+                                                                        onclick="colorpick(this);">
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="138" align="center">
+                                                    留言：
+                                                </td>
+                                                <td>
+                                                    <textarea name="content" cols="50" rows="9" class="wenbenkuang" id="content"></textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="34" align="center" style="padding-left: 10px">
+                                                    &nbsp;
+                                                </td>
+                                                <td class="word_grey">
+                                                    <input name="Button" type="button" class="btn_grey" value="提交留言" onclick="alert('本实例不提供该功能!');">
+                                                    <input name="Submit2" type="reset" class="btn_grey" value="重写留言">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" valign="top">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>

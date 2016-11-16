@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>transition动画</title>
+    <style type="text/css">
+        #wrapper
+        {
+            width: 1024px;
+            margin: 0 auto;
+        }
+        .progress-bar
+        {
+            width: 30px;
+            height: 30px;
+            background: green;
+            opacity: 1;
+        }
+        .progress-bar:hover
+        {
+            width: 960px;
+            
+            opacity: 0;    <!--设置透明程度，为0，表示隐藏-->
+        }
+        #bar1
+        {
+            transition: width 3s ease 2s;    <!--当鼠标悬浮的时候，宽度由30px变为960px,在3秒内执行，动画形式是ease,延迟2秒后执行-->
+        }
+        #bar2
+        {
+            transition: width 3s linear,opacity 5s linear;
+        }
+        #bar3
+        {
+            transition: all 3s ease-in 1s;   <!-- 表示设置所有的属性变化，在3秒内执行，动画形式是ease-in ,在1秒后执行 -->
+        }
+        #bar4
+        {
+            transition: all 3s ease-out;
+        }
+        #bar5
+        {
+            transition: all 3s ease-in-out;
+        }
+        #bar6
+        {
+            transition: all 3s cubic-bezier;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>
+            ease</h1>
+        <div class="progress-bar" id="bar1">
+        </div>
+        <h1>
+            linear</h1>
+        <div class="progress-bar" id="bar2">
+        </div>
+        <h1>
+            ease-in</h1>
+        <div class="progress-bar" id="bar3">
+        </div>
+        <h1>
+            ease-out</h1>
+        <div class="progress-bar" id="bar4">
+        </div>
+        <h1>
+            ease-in-out</h1>
+        <div class="progress-bar" id="bar5">
+        </div>
+        <h1>
+            cubic-bezier</h1>
+        <div class="progress-bar" id="bar6">
+        </div>
+    </div>
+</body>
+</html>

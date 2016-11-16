@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="style.css" rel="stylesheet">
+<title>生日提醒器</title>
+<head>
+<script language="JavaScript">
+function birthday(year,month,date,person)
+{
+	this.year = year;
+	this.month = month;
+	this.date = date;
+	this.person = person;
+}
+var friendlist = new Array(6);
+friendlist[0] = new birthday(85,2,28,"小张");
+friendlist[1] = new birthday(87,1,1,"小李");
+friendlist[2] = new birthday(88,7,14,"小辉");
+friendlist[3] = new birthday(88,1,8,"斌斌");
+friendlist[4] = new birthday(87,10,12,"大黑");
+friendlist[5] = new birthday(86,12,22,"君君");
+var now = new Date();
+today = new Date(now.getYear(),now.getMonth(),now.getDate());
+var bool=false;
+function ShowBirthday()
+{
+  for (i=0;i<6;++i)
+  {
+    thisDate = new Date(today.getYear(),friendlist[i].month-1,friendlist[i].date);
+    var Bmin=Math.round((thisDate.getTime()-today.getTime())/(24*60*60*1000));
+	if (Bmin==0)
+	{
+	  bool=true;
+	  note=i;
+	  break;
+	}	
+	if (Bmin>0) 
+    {
+	  var note=i;
+	  break;
+    }
+  }
+  if (Bmin>=0)
+  {
+  if ((note<5)&&(Bmin!=0))
+  {
+	for (i=note+1;i<6;++i)
+    {
+       thisDate = new Date(today.getYear(),friendlist[i].month-1,friendlist[i].date);
+       var Bmax=Math.round((thisDate.getTime()-today.getTime())/(24*60*60*1000));
+       if (Bmin==0)
+	  {
+	    bool=true;
+	    note=i;
+	    break;
+	  }
+	   if (Bmax>0)
+       {
+         if (Bmin>Bmax)
+         {
+           Bmin=Bmax;
+		   note=i;
+         }
+       }
+    }
+  }
+  if (bool==false)
+  {
+    document.write("<Center>"+"提示"+"<br>"+"<br>"+"</Center>");
+	document.write("你的好朋友[ "+friendlist[note].person+" ]将在"+Bmin+"天后过生日！<P>"); 
+  }	
+  else
+  {
+	document.write("<Center>"+"提示"+"<br>"+"<br>"+"</Center>");
+	document.write("你的好朋友[ "+friendlist[note].person+" ]在今天过生日！<P>");
+  }
+  }
+  else
+  {
+	document.write("<Center>"+"提示"+"<br>"+"<br>"+"</Center>");
+	document.write("你的好朋友在这个月没有过生日的！<P>");
+  }
+}
+function showdate()
+{
+	var now = new Date();
+	var year = now.getFullYear();
+	var month = now.getMonth()+1;
+	var day = now.getDate();
+	document.write("今天是："+year+"年"+month+"月"+day+"日");
+}
+</script>		
+</head>
+<body>
+	<script language = "javascript">
+		showdate();
+	</script>  
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <table width="238" height="115" border="0" align="center" cellpadding="0" cellspacing="0">
+  	<tr>
+    	<td height="62" background="images/default_02.gif">&nbsp;</td>
+    </tr>
+    <tr>
+    	<td width="238" height="176" align="center" valign="middle" background="images/default_01.jpg">
+		<table width="200" height="100" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+        	<td align="left" valign="top">
+			<font color="#FF0000">
+	    	<SCRIPT language="JavaScript">
+				ShowBirthday();
+			</SCRIPT>
+			</font> 
+			</td>
+        </tr>
+        </table>
+	  </td>
+    </tr>
+	</table>
+  <p>&nbsp;</p>
+</body>
+</html>

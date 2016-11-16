@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<p align="center">明日科技图书</p>
+<script language="javascript">
+	changcol=Array(6,7,8,9,'a','b','b','c','d','e','f')
+	t="<table height=4 width=100% cellspacing=0 cellpadding=0><tr>"
+	for(x=0;x<40;x++){t+="<td id=td"+x+"></td>"}
+	document.write(t+"</tr></table>")
+	function line(y){
+	    for(i=0;i<40;i++){
+		c=(i+y)%20;
+		if(c>10){c=20-c}
+		document.all["td"+(i)].bgColor="'#00"+changcol[c]+"00"+changcol[c]+"'"}
+		y++;
+		setTimeout('line('+y+')',1);
+	}
+	line(1);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>3D场景</title>
+    <style>
+        #experiment {
+        -webkit-perspective:300; /*浏览器距离将要观察到的物体有1000px像素的距离；*/
+        -webkit-perspective-origin:50% 50%;  /*观察物体的视口；*/
+        -webkit-transform-style:preserve-3d; /*告诉浏览器将对transform属性进行3D操作；*/
+        }
+        #block {
+        background:#69C;
+        width:200px;
+        height:200px;
+        margin:100px auto;
+        -webkit-transform:rotateY(45deg);
+     <!--   -webkit-transform:translateZ(100px); -->   /*如果想对一个div块元素的transform属性调整，使其对观察者而言，向屏幕外位移100个像素*/
+        }
+    </style>
+</head>
+<body>
+    <div id="experiment">
+        <div id="block">
+        </div>
+    </div>
+</body>
+</html>

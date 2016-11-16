@@ -1,0 +1,110 @@
+<html>
+<head>
+<script language="JavaScript">
+function checkPrice(){
+if (form1.dj.value==0 && form1.dj.value==""){ 
+	alert("请输入单价！");form1.dj.focus();form1.dj.select();return;}
+    if(isNaN(form1.dj.value)){
+   		alert("您输入的单价不是有效值！");form1.dj.focus();form1.dj.select();return;
+	}
+}
+function checkNum(){
+if (form1.sl.value==0 && form1.sl.value==""){
+	alert("请输入数量！");form1.sl.focus();form1.sl.select();return;
+}
+	str=form1.sl.value;
+	var Expression=/^[1-9]+(\d*$)/; 	
+	var objExp=new RegExp(Expression);
+	if(objExp.test(str)==false){
+		alert("您输入的不是有效值（请输入自然数）！");form1.sl.focus();form1.sl.select();return;
+	}
+}
+function aotoPay(){
+	form1.je.value=form1.sl.value*form1.dj.value;
+	if (isNaN(form1.je.value)){
+		form1.je.value=0;
+	}
+}
+
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>验证数量和金额</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #663300}
+-->
+</style>
+</head>
+<body>
+<form action="" method="post" name="form1">
+<table width="650" height="403" border="0" cellpadding="0" cellspacing="0" background="Images/main.gif">
+  <tr>
+    <td width="42" height="72" rowspan="2">&nbsp;</td>
+    <td height="41" colspan="2">&nbsp;</td>
+    <td width="38" rowspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="30" height="46" valign="top"><img src="Images/add.gif" width="20" height="18"></td>
+    <td width="697" valign="top">添加采购信息</td>
+  </tr>
+  <tr>
+    <td height="298">&nbsp;</td>
+    <td colspan="2" valign="top"><table width="465" border="0" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="115" height="27" align="center" nowrap>采购单号：</td>
+        <td width="433"><input name="cgID" type="text" id="cgID" value="CG00001" readonly="yes"></td>
+      </tr>
+      <tr valign="baseline">
+        <td height="27" align="center" nowrap>商品名称：</td>
+        <td><input type="text" name="spname" value="" size="50"></td>
+      </tr>
+      <tr valign="baseline">
+        <td height="27" align="center" nowrap>生产厂家：</td>
+        <td><input type="text" name="cs" value="" size="50" >        </td>
+      </tr>
+      <tr valign="baseline" >
+        <td height="27" align="center" nowrap>规　　格：</td>
+        <td><input type="text" name="gg" value="" size="50"></td>
+      </tr>
+      <tr valign="baseline">
+        <td height="27" align="center" nowrap>单　　位：</td>
+        <td><input type="text" name="dw" value="">        </td>
+      </tr>
+      <tr valign="baseline" >
+        <td height="27" align="center" nowrap>单　　价：</td>
+        <td><font color="#00CCFF">
+          <input type="text" name="dj" value="0" onKeyUp="checkPrice()">
+        </font><span class="style1">( 元 )</span><font color="#FF0000"> *</font></td>
+      </tr>
+      <tr valign="baseline">
+        <td height="27" align="center" nowrap>数　　量：</td>
+        <td><font color="#00CCFF">
+          <input type="text" name="sl" value="1" onKeyUp="checkNum()" onBlur="aotoPay()">
+        </font><font color="#FF0000">*</font><span class="style1">( 只能是自然数 )</span> </td>
+      </tr>
+      <tr valign="baseline">
+        <td height="27" align="center" nowrap>金　　额：</td>
+        <td><input type="text" name="je" value="0" readonly="yes">
+            <span class="style1">( 元 )</span><font color="#FF0000"> *</font></td>
+      </tr>
+      <tr valign="middle">
+        <td height="40" colspan="2" align="right" nowrap><div align="center">
+            <input name="button" type="button" class="btn_grey" value="保存" onClick="checkPrice();checkNum();form1.submit();">
+          &nbsp;
+          <input name="Submit" type="reset" class="btn_grey" value="重填">
+        </div></td>
+      </tr>
+    </table></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

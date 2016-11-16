@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>打开窗口特殊效果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body>
+<script language=JavaScript>
+var winheight,winsize,x;
+function go1(){
+	winheight=100;
+	winsize=100;
+	x=5;                     
+	win2=window.open("melody.htm","","scrollbars='no'");//打开新窗口melody.htm;  win2是新打开的melody.htm这个窗口；
+	win2.moveTo(0,0);//让新窗口melody.htm网页移动到(0,0)坐标位置；
+	win2.resizeTo(100,100);//将melody.htm窗口的高度和宽度设置成（100,100）；
+	go2();//调用go2()这个方法；
+}
+function go2(){
+	if (winheight>=screen.availHeight-3)
+		x=0
+	win2.resizeBy(5,x)//将当前"melody.htm"窗口的宽度增加5px,高度增加Xpx像素；
+	winheight+=5
+	winsize+=5
+	if (winsize>=screen.width-5){
+		winheight=100
+		winsize=100
+		x=5
+		return
+	}
+	setTimeout("go2()",50)
+}
+</script>
+<a href="javascript:go1()">打开明日美食留言薄</a> <!--让超级链接去执行go1()方法，而不是跳转到一个地址；-->
+</body>
+</html>

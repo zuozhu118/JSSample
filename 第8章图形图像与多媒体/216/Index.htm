@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>图片放大缩小</title>
+</head>
+
+<body>
+<p align="center">
+  <input type="button" value="放大" onclick="blowup()">   
+  <input type="button" value="缩小" onclick="reduce()">
+</p>
+<table WIDTH="300" BORDER="0" ALIGN="CENTER">
+  <tr>
+    <td><div align="center">
+      <input NAME="images1" TYPE="image" ID="images1" SRC="动画图片.jpg" ALIGN="MIDDLE" BORDER="0">
+    </div></td>
+  </tr>
+</table>
+<p>
+<script language="javascript">            
+function blowup()
+{
+	var height = images1.height;
+	var width = images1.width;		
+	if ((height <= height * 2)||(width <= width * 2))
+	{
+		images1.height = images1.height + 20;
+		images1.width = images1.width + 20;
+	}
+}
+function reduce()
+{
+	if ((images1.width > 100)||(images1.height > 100))
+	{
+		images1.height = images1.height - 20;
+		images1.width = images1.width - 20;
+	}		
+}
+</script>         
+</p>
+<div ALIGN="CENTER"></div>
+<p>&nbsp; </p>
+</body>
+</html>

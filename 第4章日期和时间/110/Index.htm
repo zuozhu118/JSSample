@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>使用toLocaleString获取本地时间</title>
+</head>
+
+<body background="temp.JPG">
+<script language="javascript">
+var now = new Date();
+hours = now.getHours();
+if (hours < 25)
+{
+	document.write("<font size = 6pt face = 黑体 color = ff9900>"+"当前本地系统时间为："+now.toLocaleString()+"</font>");
+}
+</script>
+</body>
+</html>

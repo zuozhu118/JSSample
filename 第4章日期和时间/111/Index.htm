@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>全中文显示日期</title>
+</head>
+
+<body background="temp.JPG">
+<script language="JavaScript">
+function numberyear(index)
+{
+	var i;
+	var numberstring="零一二三四五六七八九";
+	text =  "";
+	for (i = 0; i <4; i++)
+	{
+		point=parseInt(index.toString().substring(i,i+1));
+		text = text + numberstring.substring(point,point+1)
+	}
+	return "公元"+text;
+}
+function number(index1)
+{
+	var numberstring="一二三四五六七八九十";
+  	if(index1 ==0)
+  		{document.write("十")}
+ 	if(index1 < 10)
+  	{
+    	document.write(numberstring.substring(0+(index1-1),index1));
+  	}
+  	else if(index1 < 20)
+  	{
+    	document.write("十"+numberstring.substring(0+(index1-11),(index1-10)));
+  	}
+  	else if(index1 < 30)
+  	{
+    	document.write("二十"+numberstring.substring(0+(index1-21),(index1-20)));
+  	}
+  	else
+  	{
+    	document.write("三十"+numberstring.substring(0+(index1-31),(index1-30)))
+  	}
+}
+	var today1 = new Date();
+	var year = today1.getYear();
+	var month = today1.getMonth()+1;
+	var date = today1.getDate();
+	var day = today1.getDay();
+	document.write("<b><font size = 6pt face = '华文彩云' Color = #FF0000>"+numberyear(year)+"年");
+	number(month);
+	document.write("月");
+	number(date);
+	document.write("日"+"</font></b>");
+</script>
+</body>
+</html>

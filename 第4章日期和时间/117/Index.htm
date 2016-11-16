@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>显示最后修改时间</title>
+<script language="javascript">
+	function alterdate()
+	{
+		document.form1.textfield.value = document.lastModified;
+	}	
+</script>
+</head>
+
+<body onLoad="alterdate();" background="temp.JPG">
+<form name="form1" method="post" action="">
+  <center>
+	 <p><font color="#FF0000" face="黑体" size="4">上一次修改此文件的时间为：</font></p>
+	 <p>
+		<input type="text" name="textfield">
+	 </p>
+  </center>
+</form>
+</body>
+</html>

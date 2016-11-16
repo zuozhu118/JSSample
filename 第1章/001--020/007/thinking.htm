@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>为弹出的窗口加入关闭按钮</title>
+<style type="text/css">
+<!--
+.style2 {
+	font-size: 9pt;
+	color: #000000;
+}
+-->
+</style>
+</head>
+<%
+String question="我在一家软件公司工作，每天都要面对各种编程问题，查找资料和解决难题浪费了大量时间，又得赶进度，如何解决？";
+String answer="很多编程者和您一样，每天都要做一些重复、耗时的工作，压力非常大。《明日编程词典》提供了编程者所需的基础知识、函数应用、控件应用、经验技巧、典型实例、界面设计和项目源码七大资源库。这七大资源库汇集了几十位编程高手的开发经验和实例，您可以在这些库中快速查找所需技术和问题，快速解决开发难题。";
+%>
+<body>
+
+<html>
+<body>
+<table width="100%" height="264"  border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="49" colspan="2" background="images/bg_detail.gif"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="22" align="center" class="word_white">最新服务</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>      </td>
+  </tr>
+  <tr>
+    <td height="191" colspan="2" align="center" valign="top" bgcolor="#FFFFFF">
+      <table width="90%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="6%" align="center"><img src="images/6.gif" width="20" height="20" /></td>
+          <td width="94%" style="padding:6px;"><span class="style2">明日科技对读者的最新服务？</span></td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center" style="line-height:150%;"><img src="images/top.gif" width="44" height="49" /></td>
+          <td style="line-height:150%;padding:6px;"><div align="left" class="style2">明日科技解答：</div></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="style2" style="line-height:150%;"> &nbsp;&nbsp;&nbsp;&nbsp;为了能更好地为读者服务，我公司现在正在重新组建公司的对服务网站，希望能为读者提供够多的帮助。为了能更好地为读者服务，我公司现在正在重新组建公司的对服务网站，希望能为读者提供够多的帮助为了能更好地为读者服务，我公司现在正在重新组建公司的对服务网站，希望能为读者提供够多的帮助为了能更好地为读者服务。</td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td width="91%" height="24" align="right" valign="middle" bgcolor="#E6E6E6">☆ 明日科技为您提供全程服务!</td>
+    <td width="9%" align="center" valign="middle" bgcolor="#E6E6E6"><input name="Button" type="button" class="btn_grey" value="关闭" onClick="window.close();"></td>
+  </tr>
+</table>
+</body>
+</html>

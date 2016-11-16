@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<script language="javascript">
+var newformW=180;
+var newformH=130;
+function pp(){
+	var T=window.screen.width-newformW;
+	var L = window.screen.height + newformH;
+
+	//width="+newformW+" 表示width等于newformW；在" "中用加号拼接一个变量；width="+newformW+"就表示width=newformW的意思；
+	var name=window.open("ad.htm","","width="+newformW+",height="+newformH+",top="+T+",left="+L);
+}
+pp();
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>计算某一天是星期几</title>
+<style type="text/css">
+.style5 {font-size: 12px}
+</style>
+</head>
+<script language="javascript">
+function checktext()
+{
+	if((form1.yeartext.value == "") && (form1.monthtext.value == "") && (form1.datetext.value == ""))
+	{
+		alert("请输入相关信息!");
+		form1.yeartext.focus();return;
+	}
+	if((form1.yeartext.value.length !=4 ) && (form1.monthtext.value.length !=1 ) && (form1.datetext.value.length !=1 ))
+	{
+		alert("输入错误，只能输入4位数！");
+		form1.yeartext.focus();return;
+	}
+}
+
+function mod(x, x_div)
+{    
+	for (var i=x; i>=x_div; i -= x_div);    
+		return i;
+}
+
+function getday()
+{
+	var currentyear = parseInt(form1.yeartext.value,10);
+	var currentmonth = parseInt(form1.monthtext.value,10);
+	var currentday = parseInt(form1.datetext.value,10);
+	var sig_val;    
+	var begindate = new Array(0,3,3,6,1,4,6,2,5,0,3,5);
+	var rundate = new Array(-1,2,2,5,0,3,5,1,4,-1,2,4);
+	var Pmonth = new Array(29,31,28,31,30,31,30,31,31,30,31,30,31)
+	var montharray = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+	sig_val =begindate[currentmonth - 1];
+	var val1 = mod((currentyear + parseInt(currentyear/4) + currentday + sig_val)-2,7);
+	var M=parseInt(document.all.monthtext.value);
+	var D=parseInt(document.all.datetext.value);
+	if ((currentyear%4==0 && currentyear%100!=0)||(currentyear%400==0))
+	{
+		if ((M<13)&&(M>0)){
+			if ((M==2)&&(D>Pmonth[0])){alert('输入错误');document.all.resulttext.value='';}
+			else{
+				if ((D>Pmonth[M])&&(M!=2)){alert('输入错误');document.all.resulttext.value='';}
+				else{
+				sig_val =rundate[currentmonth - 1];
+				val1 = mod((currentyear + parseInt(currentyear/4) + currentday + sig_val)-2,7);
+				if (M>2){val1+=1;}
+				form1.resulttext.value =montharray[val1];
+				}
+			}
+		}else{alert('输入错误');document.all.resulttext.value='';}
+	}
+	else
+	{
+		if ((M<13)&&(M>0)){
+			if (D>Pmonth[M]){alert('输入错误');document.all.resulttext.value='';}
+			else{form1.resulttext.value =montharray[val1];}
+		}else{alert('输入错误');document.all.resulttext.value='';}
+	}
+}
+</script>	
+<body>
+<center>
+<form name="form1" method="post" action="">
+  <table width="308" border="1" cellpadding="3" cellspacing="1" bordercolor="#33CCFF" bgcolor="#CCFFFF">
+      <tr bgcolor="#FFFFFF">
+        <td align="center" class="style5">输入年：</td>
+        <td width="170"><input name="yeartext" type="text" id="yeartext" value="2008"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td align="center" class="style5">输入月：</td>
+        <td><input name="monthtext" type="text" value="2"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td align="center" class="style5">输入日：</td>
+        <td><input name="datetext" type="text" value="2"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td align="center"><span class="style5">星&nbsp;&nbsp;期：</span></td>
+        <td><input name="resulttext" type="text" id="resulttext"></td>
+      </tr>
+      <tr align="center" bgcolor="#FFFFFF">
+        <td colspan="2">
+		<div align="right">
+          <input name="enter" type="button" value="计算" onClick="checktext();getday();">
+        </div>
+		</td>
+      </tr>
+    </table>
+  </form>
+</center>
+</body>
+</html>

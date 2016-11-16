@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>生成指定位数的随机字符串</title>
+<link href="style.css" rel="stylesheet">
+<script language="javascript">
+function checkCode(digit){
+	var sourceStr="0,好,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,辉,I,J,K,L,明,N,P,Q,日,宋,T,U,V,W,X,Y,Z";    //这里还可以继续添加
+	arrStr=sourceStr.split(",");
+	var result="";
+	var suf=0;
+	for(i=0;i<parseInt(digit);i++){
+		suf=parseInt(Math.random()*arrStr.length);
+		result=result+arrStr[suf];
+	}
+	return result;
+}
+</script>
+<script language="javascript">
+function deal(){
+	result.innerHTML="&nbsp;&nbsp;产生的随机字符串："+checkCode(form1.digit.value);
+}
+</script>
+
+</head>
+<body>
+<form name="form1" method="post" action="">
+<table width="271" height="178"  border="0" cellpadding="0" cellspacing="0" background="images/result.gif">
+  <tr>
+    <td valign="top"><table width="100%" height="150"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="15%" height="55">&nbsp;</td>
+        <td width="73%" valign="bottom"><div id="result">&nbsp;&nbsp;产生的随机字符串：</div></td>
+        <td width="12%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="68">&nbsp;</td>
+        <td align="center">
+            <br>
+            请输入要产生的随机字符的位数：<br>
+            <br>
+            <input name="digit" type="text" class="wenbenkuang" id="digit" value="4">
+            (1-15)</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td align="center"><input name="Submit" type="button" class="go-wenbenkuang" value="生成" onClick="deal()">
+          &nbsp;
+          <input name="Submit2" type="button" class="go-wenbenkuang" value="刷新" onClick="window.location.reload();"></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+</html>

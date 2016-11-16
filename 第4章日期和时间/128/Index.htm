@@ -1,0 +1,36 @@
+<html>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<head>
+<TITLE>带阴影的时钟</TITLE> 
+<script language=javaScript>
+function clockon() 
+{
+	thistime= new Date()
+	var hours=thistime.getHours()
+	var minutes=thistime.getMinutes()
+	var seconds=thistime.getSeconds()
+	if (eval(hours) <10) {hours="0"+hours}
+	if (eval(minutes) < 10) {minutes="0"+minutes}
+	if (seconds < 10) {seconds="0"+seconds}
+	thistime = hours+":"+minutes+":"+seconds
+	if(document.all) 
+	{
+		bgclocknoshade.innerHTML=thistime
+		bgclockshade.innerHTML=thistime
+	}
+	if(document.layers) 
+	{
+		document.bgclockshade.document.write("<div id=bgclockshade>'+thistime+'</div>")
+		document.bgclocknoshade.document.write('<div id="bgclocknoshade">'+thistime+'</div>')
+		document.close()
+	}
+	var timer=setTimeout("clockon()",1000)
+}
+</script>
+<link rel="stylesheet" href="../style.css"></head>
+<body onLoad="clockon()">
+  <br>
+		<div id="bgclockshade" style="position:absolute;visibility:visible;font-family:Arial;color:0066CC;font-size:50px;top:50px;left:345px"></div>
+		<div id="bgclocknoshade" style="position:absolute;visibility:visible;font-family:Arial;color:FFCC00;font-size:50px;top:48px;left:343px"></div>
+</body>
+</html>

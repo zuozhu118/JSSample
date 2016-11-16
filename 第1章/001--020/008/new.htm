@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>关闭弹出窗口时刷新父窗口</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-size: 9pt;
+	color: #FFFFFF;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+}
+.style3 {
+	font-size: 9pt;
+	color: #000000;
+}
+-->
+</style>
+</head>
+<script language="javascript">
+function Mycheck()
+{
+alert("关闭子窗口！");
+window.opener.location.reload();  //刷新父窗口中的网页:window.opener 实际上就是通过window.open打开的窗体的父窗体,location位置，reload()重新加载
+//window.opener 实际上就是通过window.open打开的窗体的父窗体。
+window.close();//关闭当前窗窗口
+}
+</script>
+<body>
+<table width="400" height="224" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="17" bgcolor="#9A3334"><div align="center" class="style1">添加会议记录信息</div></td>
+  </tr>
+  <tr>
+    <td height="192"><table width="373" height="167" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style3">会议标题: 2007年新工作任务具体的分配以及工作要求</span></td>
+      </tr>
+      <tr>
+        <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style3">在新的一年里工作需要努力加油，但是必须要认真并且要有责任心要认真完成在新的一年里工作需要努力加油，但是必须要认真并且要有责任心要认真完成在新的一年里工作需要努力加油，但是必须要认真并且要有责任心要认真完成在新的一年里工作需要努力加油，但是必须要认真并且要有责任心要认真完成在新的一年里工作需要努力加油，但是必须要认真并且要有责任心要认真完成在新的一年里工作需要努力加油，但是必须要认真并且要有责任心要认真完成在新的一年里工作需要努力加油，但是必须要认真并且要有责任心要认真完成</span></td>
+      </tr>
+      <tr>
+        <td><div align="right">
+          <input type="submit" name="Submit" value="关闭这个子窗口" onclick="Mycheck();">
+        </div></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="13" bgcolor="#9A3334">&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

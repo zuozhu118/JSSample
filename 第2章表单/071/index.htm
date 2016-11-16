@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>选中单选按钮后显示其他表单元素</title>
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+.wenbenkuang {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+-->
+</style>
+</head>
+<body style="font-size:12px">
+<table width="360" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#6699CC">
+  <form name="form1">
+    <tr bgcolor="#6699CC">
+      <td height="28" colspan="2" align="center"><span class="style1" style="font-weight:bold">网站新闻信息添加</span></td>
+    </tr>
+    <tr bgcolor="#FFFFFF">
+      <td height="28" align="right">信息类型:</td>
+      <td height="28"><input name="infotype" type="radio" value="1" onClick="img.style.display='none';" checked>
+        站内公告
+          <input type="radio" name="infotype" value="2" onClick="img.style.display='block';">
+      商业资讯</td>
+    </tr>
+    <tr bgcolor="#FFFFFF">
+      <td height="28" align="right">信息主题:</td>
+      <td height="28"><input name="信息主题" type="text" class="wenbenkuang" id="信息主题" size="30"></td>
+    </tr>
+    <tr bgcolor="#FFFFFF" id="img" style="display:none">
+      <td height="22" align="right">图片名称:</td>
+      <td height="22"><input name="textfield" type="text" class="wenbenkuang" size="30"></td>
+    </tr>
+    <tr bgcolor="#FFFFFF">
+      <td height="22" align="right">信息内容:</td>
+      <td height="22"><textarea name="信息内容" cols="40" rows="4" class="wenbenkuang" id="信息内容"></textarea></td>
+    </tr>
+    <tr bgcolor="#FFFFFF">
+      <td height="28" colspan="2" align="center"><input name="add" type="submit" class="button" id="add2" value="添 加">
+&nbsp;
+        <input type="reset" name="Submit2" value="重 置" class="button"></td>
+    </tr>
+  </form>
+</table>
+</body>
+</html>

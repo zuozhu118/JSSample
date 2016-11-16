@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>使用数组显示星期</title>
+<style TYPE="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+<body background="temp.JPG">
+<script language = "javascript">
+	var week,today,week_i;
+	week = new Array(7);
+	week[1] = "星期一";
+	week[2] = "星期二";
+	week[3] = "星期三";
+	week[4] = "星期四";
+	week[5] = "星期五";
+	week[6] = "星期六";
+	week[0] = "星期日";
+	today = new Date();
+	week_i = today.getDay();
+	var year = today.getFullYear();
+	var month = today.getMonth()+1;
+	var date = today.getDate();
+	document.write("<font color = #3333FF size = '6pt' face = 隶书>"+"今天是"+year+"年"+month+"月"+date+"日 "+week[week_i]+"</font>");
+</script>
+<span CLASS="style1"></span>
+</body>
+</html>

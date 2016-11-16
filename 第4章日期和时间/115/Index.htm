@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>退出页面时显示停留时间</title>
+<script language="Javascript">
+begintime = new Date();
+function outtime() {
+	endtime = new Date();
+	minutes = (endtime.getMinutes() - begintime.getMinutes());
+	seconds = (endtime.getSeconds() - begintime.getSeconds());
+	time = (seconds + (minutes * 60));
+	time = (time);
+	alert('您在本页共停留了 ' + time+" 秒钟");
+} 
+</script>
+</head>
+<body onUnload="outtime();">
+<img src="Images/&#22270;&#29255;.jpg" width="792" height="542" hspace="90" vspace="90">
+</body>
+</html>

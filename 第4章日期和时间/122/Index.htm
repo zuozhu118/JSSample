@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>倒计时</title>
+<script language="javascript">
+function countdown(title,Intime)
+{
+var online= new Date(Intime);
+var now = new Date();
+var leave = online.getTime() - now.getTime();
+var day = Math.floor(leave / (1000 * 60 * 60 * 24))+1;
+if (day >1)
+{ 
+	if(document.all)
+	{
+		tools.innerHTML="距"+ title+"还有"+day+"天！";
+	}
+}
+else{
+	if (day ==1) 
+	{
+		if(document.all)
+		{
+			tools.innerHTML="明天就是"+title+"啦，希望你能考个好成绩！";
+		}
+	 	
+	}
+else{
+	if (day == 0) 
+	{
+		 tools.innerHTML="今天就是2008年高考，不要太担心，只要发挥出自己的正常水平就可以，加油^x^";
+	}
+	else{
+		if(document.all)
+		{
+			tools.innerHTML=title+"已经过了，你考的怎么样呢！";
+		}
+	}
+	}
+}
+}
+</script>
+</head>
+<body background="temp.JPG">
+<center>
+	<b>
+	<font size="5pt" color="#FFFF00" face="宋体">
+	<div id = "tools">
+	<script language="javascript">
+		countdown("2008年高考时间","6/8/2008");
+	</script>
+	</div>
+	</font>
+	</b>
+</center>
+</body>
+</html>

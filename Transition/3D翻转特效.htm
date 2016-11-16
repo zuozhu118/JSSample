@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>3D翻转特效</title>
+    <script src="../jquery-1.12.0.min.js"></script>
+    <style>
+        #roll3dview
+        {
+            -webkit-perspective: 1200; /*浏览器距离将要观察到的物体有1000px像素的距离；*/
+            -webkit-perspective-origin: 50% 50%; /*观察物体的视口；*/
+            overflow: hidden;
+            border: 1px solid green;
+        }
+
+        #pagegroup
+        {
+            position: relative;
+            border: 1px solid red;
+            transform-style:preserve-3d;/*告诉浏览器将对transform属性进行3D操作；*/
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+            #pagegroup > div
+            {
+                width: 360px;
+                height: 360px;
+                line-height: 360px;
+                padding: 20px;
+                background: black;
+                color: #ffffff;
+                font-size: 360px;
+                text-align: center;
+                font-weight: bold;
+                position: absolute;
+            }
+
+        #page1
+        {
+            -webkit-transform-origin: bottom;
+            -webkit-transition: -webkit-transform 1s linear;
+        }
+
+        #page2, #page3, #page4, #page5, #page6
+        {
+            -webkit-transform-origin: bottom;
+            -webkit-transition: -webkit-transform 1s linear;
+            -webkit-transform: rotateX(90deg);
+        }
+
+        .rollcontrol
+        {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        var pageindex = 1;
+        function pre() {
+            //alert(pageindex);
+            if (pageindex > 6) {
+                return;
+            }
+            var curpage = $('#page' + pageindex);//拿到当前页面；
+            curpage.css('webkitTransform', 'rotateX(-90deg)');//让当前页沿X轴向前翻滚90度；
+            pageindex++;
+           
+            var nextpage = $('#page' + pageindex + '');
+            nextpage.css('webkitTransform', 'rotateX(0deg)');//让当前页沿X轴向前翻滚90度；
+           
+        }
+
+
+
+        //var curpage = document.getElementById("page" + pageindex);//拿到当前页面；
+        //curpage.style.webkitTransform = 'rotateX(-90deg)';//让当前页沿X轴向前翻滚90度；
+        //pageindex++;
+        //var nextpage = document.getElementById("page" + pageindex);
+        //nextpage.style.webkitTransform = 'rotateX(0deg)';//让当前页沿X轴向前翻滚90度；
+    </script>
+</head>
+<body>
+    <div id="roll3dview">
+        <div id="pagegroup">
+            <div id="page1">
+                1
+            </div>
+            <div id="page2">
+                2
+            </div>
+            <div id="page3">
+                3
+            </div>
+            <div id="page4">
+                4
+            </div>
+            <div id="page5">
+                5
+            </div>
+            <div id="page6">
+                6
+            </div>
+        </div>
+    </div>
+
+    <div class="rollcontrol">
+        <a href="javascript:pre()">上一页</a>
+        <a href="javascript:next()">下一页</a>
+    </div>
+</body>
+</html>

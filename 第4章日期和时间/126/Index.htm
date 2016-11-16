@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>节日提示</title>
+</head>
+
+<SCRIPT language="javascript">
+function countdown()
+{
+	calendar = new Date();
+	day = calendar.getDay();
+	month = calendar.getMonth();
+	date = calendar.getDate();
+	year = calendar.getYear();
+	if (year< 100) 
+	year = 1900 + year;
+	cent = parseInt(year/100);
+	g = year % 19;
+	k = parseInt((cent - 17)/25);
+	i = (cent - parseInt(cent/4) - parseInt((cent - k)/3) + 19*g + 15) % 30;
+	i = i - parseInt(i/28)*(1 - parseInt(i/28)*parseInt(29/(i+1))*parseInt((21-g)/11));
+	j = (year + parseInt(year/4) + i + 2 - cent + parseInt(cent/4)) % 7;
+	l = i - j;
+	emonth = 3 + parseInt((l + 40)/44);
+	edate = l + 28 - 31*parseInt((emonth/4));
+	emonth--;
+	var dayname = new Array ("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+	var monthname =
+	new Array ("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月" );
+	var time="<font style=font-size:9pt>"+year +"年"+monthname[month]+date + "日"+dayname[day]+" "+"</span></font>";
+	var holiday="";
+	if ((month == 0) && (date == 1)) 
+		holiday="<font style=font-size:9pt color=red>元旦";
+	if ((month == 4) && (date == 1))
+		holiday="<font style=font-size:9pt color=red>国际劳动节";
+	if ((month == 4) && (date == 4))
+		holiday="<font style=font-size:9pt color=red>青年节";
+	if ((month == 5) && (date == 1))
+		holiday="<font style=font-size:9pt color=red>国际儿童节";
+	if ((month == 9) && (date == 1)) 
+		holiday="<font style=font-size:9pt color=red>国庆节";
+	if ((month == 11) && (date == 25)) 
+		holiday="<font style=font-size:9pt color=red>圣诞节";
+	time=time+holiday+"<br></span></font>";
+	clock.innerHTML=time;
+}
+</SCRIPT>
+<body onLoad="countdown()">
+<table width="219" height="27" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="219" height="27" align="center" background="images/1.JPG"><div id="clock"></div></td>
+  </tr>
+</table>
+</body>
+</html>

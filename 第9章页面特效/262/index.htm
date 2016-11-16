@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>页首页尾切换</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body style="margin:0pt " onResize="pp()" onLoad="pp()">
+<table width="822px" border="0" align="center" cellpadding="0" cellspacing="0" id="table1">
+  <tr>
+    <td width="800" rowspan="2" valign="top" id="td1"><img src="5.jpg" width="800" height="845">
+	</td>
+    <td height="512" valign="top" id="td2">
+	<table id="T_img2" width="32" height="60px" border="0" style="top:500 ">
+      <tr>
+        <td align="center" valign="bottom">
+			<img id='img2' src='3.jpg' onMouseMove='move(4)' onMouseOut='move(3)' onClick="DUform(1)">
+		</td>
+      </tr>
+    </table>  
+  </tr>
+  <tr>
+    <td width="32" valign="bottom" id="td3">
+  <table id="T_img1" width="32" height="60px" border="0" style="top:0 ">
+     <tr>
+        <td align="center" valign="top">
+			<img id='img1' src='1.jpg' onMouseMove='move(2)' onMouseOut='move(1)' onClick="DUform(2)">
+		</td>
+     </tr>
+  </table>    
+  </tr>
+</table>
+<script language="javascript">
+function pp(){
+	//document.all.table1.style.width="100%";
+	//document.all.table1.style.height="100%"
+	document.all.td2.style.width=document.all.td3.style.width="2%";
+}
+function move(N){
+	if ((N==1)||(N==2)){
+		document.all.img1.src=String(N)+".jpg";
+	}
+	if ((N==3)||(N==4)){
+		document.all.img2.src=String(N)+".jpg";
+	}	
+}
+function DUform(N){
+	if (N==1){document.body.scrollTop=document.body.scrollHeight}
+	else{document.body.scrollTop=0}
+}
+</script>
+</body>
+</html>

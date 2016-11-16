@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>幻灯片式图片播放</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<!--设置图片的路径-->
+<script language="javascript">
+var sPicArr = new Array();
+sPicArr[0] = new Array("images/0.gif");
+sPicArr[1] = new Array("images/1.gif");
+sPicArr[2] = new Array("images/2.gif");
+sPicArr[3] = new Array("images/3.gif");
+sPicArr[4] = new Array("images/4.gif");
+sPicArr[5] = new Array("images/5.gif");
+sPicArr[6] = new Array("images/6.gif");
+sPicArr[7] = new Array("images/7.gif");
+sPicArr[8] = new Array("images/8.gif");
+sPicArr[9] = new Array("images/9.gif");
+sPicArr[10] = new Array("images/10.gif");
+</script>
+
+<!--定义翻动图片的自定义函数-->
+<script language="javascript">
+var plPic = new Image();
+var gIndex = 0;
+function SlidePic(index){
+gIndex = index;
+if ('Microsoft Internet Explorer' == navigator.appName)
+{
+document.images["slidePic"].filters.item(0).Apply();
+}
+document.images["slidePic"].src = sPicArr[index][0];
+if ('Microsoft Internet Explorer' == navigator.appName)
+{
+document.images["slidePic"].filters.item(0).play();
+}
+}
+<!--上一张、下一张-->
+function PrevPic(){
+gIndex = ((gIndex-1)<0?(sPicArr.length-1):(gIndex-1));
+SlidePic(gIndex)}
+
+function NextPic(){
+gIndex = ((gIndex+1)>=sPicArr.length?0:(gIndex+1));
+SlidePic(gIndex);}
+
+
+<!--自动播放-->
+var sid;
+function inislide(){
+if(sid==null) sid = setInterval('NextPic()', 3000);}//fixed by AmourGUO, 051017}
+</script>
+
+
+<body onLoad="inislide();">
+<table width="31%" height="178"  border="1" align="center" cellpadding="3" cellspacing="2" bordercolor="#0066FF">
+  <tr>
+    <td width="29%"><form name="form1" method="post" action="">
+      <input name="firstbutton" type="button" id="firstbutton" value="上一张" onClick="PrevPic();">
+    </form></td>
+    <td width="42%">
+	<div align="center"><img src="Images/0.gif" name="slidePic" width="60" height="60" border="1" id="slidePic" style="BORDER-TOP: #000 1px solid; FILTER: revealtrans(duration=2.0,transition=5); BORDER-BOTTOM: #000 1px solid"   onMouseOut=;>
+	</div></td>
+    <td width="29%"><form name="form2" method="post" action="">
+      <input name="nextbutton" type="button" id="nextbutton" value="下一张" onClick="NextPic();">
+    </form></td>
+  </tr>
+</table>
+</body>
+</html>

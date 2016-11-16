@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>动态标题栏</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<img src="1.jpg" width="779" height="502">
+<script language="JavaScript">
+    //方法调试执行过程：
+    //程序会从上到下首先找到title这个方法，将title方法中的所有内容全部执行一遍，title方法执行完成一遍之后，就会执行title方法中的setTimeout方法，
+    //setTimeout方法中的方法内容是两部分：1，“ title(); ”,2，“ alert("setTimeout方法中的：title(); ”
+    // setTimeout方法首先执行第一部分：“ title(); ”
+    //“ title(); ”这部分执行完成后,再执行第二部分: “ alert("setTimeout方法中的：title(); ”,
+    //第二部分执行完毕了，setTimeout方法就执行完成了一遍，setTimeout方法内容执行完成后，title方法才整个一遍执行完成了；
+
+    //由于执行setTimeout方法中的内容title();时，又执行了一遍setTimeout方法，
+    //所以又会将setTimeout中的“ title(); ”和“ alert("setTimeout方法中的：title(); ”这部分内容执行一遍,
+    //而在执行“ title(); ”这部分时，又会将title方法中的内容setTimeout执行一遍，这样循环；
+
+
+var n=0;
+function title(){
+	n++;
+    if (n==3) {n=1}
+    if (n==1) {document.title='路飞'}
+    if (n==2) {document.title='多弗朗明哥'}
+    setTimeout(function () {
+        title();
+        alert("setTimeout方法中的：title();这部分执行完成了！");
+
+    }, 300000);  //每隔3000毫秒调用一次title()方法；
+    alert("你好啊---");
+}
+title();
+</script>
+</body>
+</html>

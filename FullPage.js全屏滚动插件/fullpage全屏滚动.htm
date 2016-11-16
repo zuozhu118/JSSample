@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>fullpage全屏滚动</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.css" />
+    <!--(导入fullpage的CSS样式）-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+    <!--(导入jquery文件）-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.2/jquery.fullPage.js"></script>
+    <!--(导入fullpage的js文件）-->
+    <style type="text/css">
+        #Ismove
+        {
+            border:1px solid black;
+            width:200px;
+            height:200px;
+            background:red;
+            position:absolute;
+            top:100px;
+            left:50%;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $('#fullpage').fullpage({
+            sectionsColor:['white','green','#74c621','gray'],//设置背景色；
+            //scrollBar:true, //设置滚动条；
+            archors: ['page1', 'page2', 'page3', 'page4'],//设置锚链接；
+            continuousVertical: true, //设置循环滚动并且不会出现跳动;
+            fixedElements: "#Ismove"
+
+            });
+        });
+    
+    </script>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section section1">
+            第一屏
+            <div id="Ismove">
+                你看我会不会动
+            </div>
+        </div>
+        <div class="section section2">
+            <!--第二屏-->
+            <div class='slide'>
+                2屏1</div>
+            <div class='slide'>
+                2屏2</div>
+            <div class='slide'>
+                2屏3</div>
+        </div>
+        <div class="section section3">
+            第三屏
+        </div>
+        <div class="section section4">
+            第四屏
+        </div>
+    </div>
+</body>
+</html>

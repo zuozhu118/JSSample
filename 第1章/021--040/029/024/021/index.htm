@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>震动的窗口</title>
+</head>
+
+<body>
+<p>
+    <SCRIPT language=javascript>
+        function flap_xy(n) {  //整屏震动；n是我们调用flap_xy方法时传入的参数，表示我们需要他震动的次数；
+	if (self.moveBy){
+		for (i = 10; i > 0; i--){
+			for (j = n; j > 0; j--){
+				self.moveBy(0,i);
+				self.moveBy(i,0);
+				self.moveBy(0,-i);
+				self.moveBy(-i,0);
+			}
+		}
+	}
+}
+
+function flap_x(n) {  //左右震动；n是我们调用flap_x方法时传入的参数，表示我们需要他震动的次数；
+	if (self.moveBy){
+		for (i = 10; i > 0; i--){
+			for (j = n; j > 0; j--){
+				self.moveBy(i,0);
+				self.moveBy(-i,0);
+			}
+		}
+	}
+}
+function flap_y(n) {  //上下震动；n是我们调用flap_y方法时传入的参数，表示我们需要他震动的次数；
+	if (self.moveBy){
+		for (i = 10; i > 0; i--){
+			for (j = n; j > 0; j--){
+				self.moveBy(0,i);
+				self.moveBy(0,-i);
+			}
+		}
+	}
+}
+
+//imgfunction方法是连 写的方法；
+ function imgfunction() {
+        //    //var img = document.getElementsByTagName("img");
+            var x = screen.width/2;
+            var y = screen.height/2;
+            window.moveTo(x, y);
+        alert("你好");
+
+}
+
+  </SCRIPT>
+    <input name="button1" type="button" id="button1" value="左右震动" onclick="flap_x(105)"/>
+    <input name="button2" type="button" id="button2" value="上下震动" onclick="flap_y(5)"/>
+    <input name="button3" type="button" id="button3" value="整屏震动" onclick="flap_xy(5)"/>
+    <input type="button" name="name" value="中间去" onclick="imgfunction()"/>
+</p>
+<p><img src="backgroup.jpg" width="779" height="502" ></p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>控制复选框的全选或反选</title>
+<style>
+.white{color:#FFFFFF; font-weight:bold}
+</style>
+<script type="text/javascript">
+function CheckAll(elementsA,elementsB)
+{
+	var len = elementsA;
+	if(len.length > 0)
+	{
+		for(i=0;i<len.length;i++)
+		{
+			elementsA[i].checked = true;
+		}
+		if(elementsB.checked ==false)
+		{
+			for(j=0;j<len.length;j++)
+			{
+				elementsA[j].checked = false;
+			}
+		}
+	}
+	else
+	{
+		len.checked = true;
+		if(elementsB.checked == false)
+		{
+			len.checked = false;
+		}
+	}
+}
+</script>
+</head>
+<body style="font-size:12px">
+<form name="form1">
+  <table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#60A2EA">
+    <tr bgcolor="#FFFFFF">
+      <td height="22" colspan="5" align="left">商品信息查看</td>
+    </tr>
+    <tr align="center" class="white">
+      <td height="22">选择</td>
+      <td height="22">所属类别</td>
+      <td height="22">商品名称</td>
+      <td height="22">会员价</td>
+      <td height="22">数量</td>
+    </tr>
+    <tr align="center" bgcolor="#FFFFFF">
+      <td height="22"><input name="chk_id" type="checkbox" id="chk_id" value="1"></td>
+      <td height="22"> 手机 </td>
+      <td height="22"> P_L音乐手机 </td>
+      <td height="22"> 1980 </td>
+      <td height="22">200</td>
+    </tr>
+    <tr align="center" bgcolor="#FFFFFF">
+      <td height="22"><input name="chk_id" type="checkbox" id="chk_id" value="2"></td>
+      <td height="22"> 玻璃制品 </td>
+      <td height="22"> 迷你水杯 </td>
+      <td height="22"> 49 </td>
+      <td height="22">500</td>
+    </tr>
+    <tr align="center" bgcolor="#FFFFFF">
+      <td height="22"><input name="chk_id" type="checkbox" id="chk_id" value="3"></td>
+      <td height="22"> 音响 </td>
+      <td height="22"> CXO音响 </td>
+      <td height="22"> 2070  </td>
+      <td height="22">200</td>
+    </tr>
+    <tr align="center" bgcolor="#FFFFFF">
+      <td height="22"><input name="chk_id" type="checkbox" id="chk_id" value="4"></td>
+      <td height="22"> 休闲装 </td>
+      <td height="22"> 休闲上衣 </td>
+      <td height="22"> 195 </td>
+      <td height="22">500</td>
+    </tr>
+    <tr align="center" bgcolor="#FFFFFF">
+      <td height="22" colspan="5" align="left">&nbsp;&nbsp;
+        <input name="chk_all" type="checkbox" id="chk_all" value="checkbox" onClick="CheckAll(this.form.chk_id,this.form.chk_all)">
+      [全选/反选]</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

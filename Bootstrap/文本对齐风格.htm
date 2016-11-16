@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>文本对齐风格</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+</head>
+
+<body>
+<p class="text-left">我居左</p>
+<p class="text-center">我居中</p>
+<p class="text-right">我居右</p>
+<p class="text-justify">There is clearly a need for CSS to be taken seriously by graphic artists. The Zen Garden aims to excite, inspire, and encourage participation. To begin, view some of the existing designs in the list. Clicking on any one will load the style sheet into this very page. The code remains the same, the only thing that has changed is the external .css file. </p>
+<!--下面是任务部分-->
+<p class="text-right">给我加个类，我就向右对齐。</p>
+
+
+</body>
+</html>
+<!--
+
+文本对齐风格
+
+在排版中离不开文本的对齐方式。在CSS中常常使用text-align来实现文本的对齐风格的设置。其中主要有四种风格：
+
+  ☑  左对齐，取值left
+
+  ☑  居中对齐，取值center
+
+  ☑  右对齐，取值right
+
+  ☑  两端对齐，取值justify
+
+为了简化操作，方便使用，Bootstrap通过定义四个类名来控制文本的对齐风格：
+
+  ☑   .text-left：左对齐
+
+  ☑   .text-center：居中对齐
+
+  ☑   .text-right：右对齐
+
+  ☑   .text-justify：两端对齐
+
+具体源码查看bootstrap.css文件第488行~第499行：
+
+.text-left {
+text-align: left;
+}
+.text-right {
+text-align: right;
+}
+.text-center {
+text-align: center;
+}
+.text-justify {
+text-align: justify;
+}
+
+例如下面的四行代码，分别定义文本的四种不同的对齐风格：
+
+<p class="text-left">我居左</p>
+<p class="text-center">我居中</p>
+<p class="text-right">我居右</p>
+<p class="text-justify">我两端对齐</p>
+
+特别声明：目前两端对齐在各浏览器下解析各有不同，特别是应用于中文文本的时候。所以项目中慎用。
+
+
+-->

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+table{
+	font-size:14px;
+}
+</style>
+<title>无标题文档</title>
+
+</head>
+
+<body >
+<script language="javascript">
+function tableclick(name1,name2,name3){
+  Trow=name1.value;
+  Tcol=name2.value;
+  Tv=name3.value;
+  if ((Trow=="") || (Tcol=="") || (Tv=="")){
+    alert("请将制作表格的条件填写完整");
+  }
+  else{
+    r=parseInt(Trow);
+	c=parseInt(Tcol);
+	Table1(r,c,Tv);
+  }
+}
+function tablevalue(a,ai,rows,col,str){
+  int1=a.length;
+  for (i=0;i<rows;++i){
+	for (j=0;j<col;++j){
+	  if ((j==0)&&(ai>=int1)){break;}
+	  if (ai>=int1){
+	  str=str+"<td scope='col'>&nbsp;</td>";
+	  }
+	  else{
+	    if (j==0){
+		str=str+"<tr><th scope='col'>&nbsp;"+(a[ai++])+"</th>";
+	    }
+		else{
+		  if (j==col-1){
+	    	str=str+"<td scope='col'>&nbsp;"+(a[ai++])+"</td>";
+		  }
+		  else{
+		  	str=str+"<td scope='col'>&nbsp;"+(a[ai++])+"</td>";
+		  }		  
+		}
+	  }
+	}
+	str=str+"</tr>";
+  }
+  return str;
+}
+function Table1(row,col,Str1){
+var str="";
+  a=new Array();
+  s=new String(Str1);
+  a=s.split("#");
+  int1=a.length;
+  ai=0;
+  if (col<=int1){
+ 	 str=str+"<table width='300' border='4'>";
+    for (i=0;i<col;++i){
+	  if (i==0){
+	  	str=str+"<tr><th scope='col'>&nbsp;"+(a[ai++])+"</th>";
+	  }
+	  else{
+	    if (i==(col-1)){
+		  str=str+"<th scope='col'>&nbsp;"+(a[ai++])+"</th></tr>";
+	    }
+	    else{
+		  str=str+"<th scope='col'>&nbsp;"+(a[ai++])+"</th>";
+	    }
+	  }
+	}
+    if (int1>col){
+      if (row>1){
+		str=tablevalue(a,ai,row-1,col,str);  
+	  }
+	}   
+	str=str+ "</table>";
+	aa.innerHTML=str;
+  }
+}
+</script>
+<form name="form1" method="post" action="">
+ <p><b>行数：</b>
+    <input name="name1" type="text" style="width:40px" value="4">
+    <b>列数：</b>
+	<input name="name2" type="text" style="width:40px" value="4">
+    <input type="button" name="Submit3" value="生成表格" onClick="tableclick(document.form1.name1,document.form1.name2,document.form1.name3)">
+ </p>
+ <p><b align="top">表值：</b></p>
+ <p>
+    <textarea name="name3" wrap="VIRTUAL" style="width:300px ">COL1#COL2#COL3#COL4#ROW1#A1#A2#a3#ROW2#B1#B2#B3#ROW3#C1#C2#C3</textarea>    
+ </p>
+</form>
+<div id="aa"></div>
+</body>
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!--
+td {
+	font-size: 9pt;	line-height:150%;
+}
+a:hover {
+	font-size: 9pt;	color: #FFC000;
+}
+a {
+	font-size: 9pt;	text-decoration: none;	color: #FFFFFF;
+	border:'1px' 'soild' '#000000'; outline-color:#000000;
+}
+image{
+ border-color:#000000;
+}
+.btn_grey {
+	font-family: "宋体";	font-size: 9pt;color: #333333;	
+	background-color: #eeeeee;cursor: hand;padding:1px;height:19px;
+	border-top: 1px solid #FFFFFF;border-right:1px solid #666666;
+	border-bottom: 1px solid #666666;border-left: 1px solid #FFFFFF;
+}
+.txt_grey {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #EEEEEE;
+	width:150;
+	background-color:#525C87;
+	/*Filter: Alpha(Opacity=1);*/
+}
+.word{
+	color:#BABECF;
+}
+input {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.wenbenkuang {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+.search  { font-family: 宋体; font-size: 9pt; color: #000000; background-color: #EEEEEE; 
+           border: 1px Hidden #000000; }
+.tableBorder {
+	border: #DFE1EB 1px solid
+}
+.tableBorder_B {
+	border: #DFE1EB 1px solid;
+	border-left-style:none;
+	border-right-style:none;
+	border-Top-style:none;
+}
+.tableBorder_LRT {
+	border: #7A84AF 1px solid;
+	border-Bottom-style:none;
+	border-Top-style:none;
+	border-Left-style:none;
+}
+.bg_gradual{
+filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#DFE1EB', endColorStr='#FFFFFF', gradientType='0')
+}
+-->

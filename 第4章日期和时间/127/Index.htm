@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>倒影时钟</title>
+</head>
+<script language="javascript">
+var timeout;
+function settimes()
+{
+	var now= new Date();
+	hours = now.getHours();
+	Minutes = now.getMinutes();
+	Seconds = now.getSeconds();
+	if (hours<10)
+		hours="0"+hours;
+	if(Minutes<10)
+		Minutes="0"+Minutes;
+	if (Seconds<10)
+		Seconds="0"+Seconds;
+	divtime1.innerHTML = hours+":"+Minutes+":"+Seconds;
+	divtime2.innerHTML = hours+":"+Minutes+":"+Seconds;
+	timeout=setTimeout('settimes()',1000);
+}
+</script>
+<body onLoad = "settimes();">
+	<font color = "#FF0066" size = "8pt">
+		<DIV class = time id = divtime1 
+			style = "HEIGHT: 10px;POSITION: absolute; TOP: 10px; WIDTH: 10px"></DIV>
+		<DIV class = time id = divtime2 
+			style = "FILTER: flipV() alpha(opacity = 25); TOP: 30px; FONT-STYLE: italic; POSITION: absolute"></DIV>
+	</font>
+</body>
+</html>

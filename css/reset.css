@@ -1,0 +1,113 @@
+
+
+
+img {
+	border:none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+}
+:focus {
+}
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+table {
+	border-collapse: collapse;
+
+}
+/*td,th,div{word-break:break-all;word-wrap:break-word}
+table{empty-cells:show;}*/
+
+/*form*/
+textarea, input, select {
+	font:12px Arial;
+	padding:1px 3px 0 3px;
+	
+	margin-bottom:1px
+}
+select {
+	border:solid 1px #D5E5E8;
+}
+.btn {
+	background:#fff url(images/wind/h.gif) 0 bottom repeat-x;
+	color:#005368;
+	border-width:1px;
+	padding-left:15px;
+	padding-right:15px;
+
+}
+.input {
+
+	padding:2px 0px 2px 1px;
+	font-size:1.0em;
+
+}
+form {
+	display:inline;
+}
+textarea {
+
+}
+
+/*常用*/
+.c {
+	clear:both;
+	height:0px;
+	font:0px/0px Arial;
+}
+.b {
+	font-weight:bold
+}
+.w {
+	white-space:nowrap
+}
+.tal {
+	text-align:left
+}
+.tac {
+	text-align:center
+}
+.tar {
+	text-align:right
+}
+.fr {
+	float:right
+}
+.fl {
+	float:left
+}
+
+/* 清除浮动  ps：一般用clear:both就ok了  这里备份下以防万一
+----------------------------------------------------------------------------------------------------*/
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+/* 兼容清除浮动和错位 */
+.clearfix:after {
+	clear: both;
+
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+.clearfix {
+
+}
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}

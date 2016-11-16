@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>随机产生指定位数的验证码</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="image/style.css" rel="stylesheet">
+<script language="javascript">
+function checkCode(digit){
+	var result="";
+	for (i = 0; i < parseInt(digit); i++) {
+
+         //JavaScript  Math对象的random()方法可以返回一个介于0到1之间的随机数；
+
+	    //Math.random()*10,乘以10，表示产生一个1到9之间的随机数；  
+	    result = result + (parseInt(Math.random() * 10)).toString();
+        //result就表示我们生产的随机数，转换成字符串累加起来；
+	}
+	return result;//调用checkCode方法，返回随机数；
+}
+</script>
+<script language="javascript">
+function deal(){
+	result.innerHTML="&nbsp;&nbsp;产生的验证码："+checkCode(form1.digit.value);
+}
+</script>
+</head>
+
+<body>
+<form name="form1" method="post" action="">
+<table width="271" height="178"  border="0" cellpadding="0" cellspacing="0" background="image/result.gif">
+  <tr>
+    <td valign="top"><table width="100%" height="150"  border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="15%" height="55">&nbsp;</td>
+        <td width="69%" valign="bottom"><div id="result">&nbsp;&nbsp;产生的验证码：</div></td>
+        <td width="16%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="68">&nbsp;</td>
+        <td align="center">
+            <br>
+            请输入要产生的验证码的位数：<br>
+            <br>
+            <input name="digit" type="text" class="wenbenkuang" id="digit" value="4">
+            (1-15)</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td align="center"><input name="Submit" type="button" class="go-wenbenkuang" value="生成" onClick="deal()">
+          &nbsp;
+          <input name="Submit2" type="button" class="go-wenbenkuang" value="刷新" onClick="window.location.reload();"></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

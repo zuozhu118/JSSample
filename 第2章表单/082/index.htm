@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>通过For循环获取表单元素的中文名称</title>
+    <script language="javascript">
+        function Mycheck(form) {
+            for (i = 0; i < form.length; i++) {
+                if (form.elements[i].value == "") {
+                    alert(form.elements[i].title + "不能为空!");
+                    //                    break;
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <table width="614" border="0" align="center" cellpadding="1" cellspacing="1">
+        <tr>
+            <td height="52" colspan="2" align="center" valign="top" background="Images/top_02_01.jpg">
+                <table width="400" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td height="38" align="center" valign="middle">
+                            <font color="#FFFFFF">
+                                <br>
+                                商品信息管理</font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="150" colspan="2" valign="top" background="Images/top_02_02.jpg" bgcolor="#f9f9f9">
+                <table width="80%" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#000000">
+                    <form name="form1">
+                    <tr align="left" bgcolor="#FFFFFF">
+                        <td height="22" colspan="2" align="center">
+                            商品销售退货
+                        </td>
+                    </tr>
+                    <tr align="left" bgcolor="#FFFFFF">
+                        <td width="183" height="22" align="left">
+                            销售编号:
+                        </td>
+                        <td width="298" height="22">
+                            <input name="txt_snum" type="text" id="txt_snum" title="销售编号">
+                        </td>
+                    </tr>
+                    <tr align="left" bgcolor="#FFFFFF">
+                        <td width="183" height="22" align="left">
+                            退货数量:
+                        </td>
+                        <td width="298" height="22">
+                            <input name="txt_nums" type="text" id="txt_nums" title="退货数量">
+                        </td>
+                    </tr>
+                    <tr align="left" bgcolor="#FFFFFF">
+                        <td height="22" align="left">
+                            退货日期:
+                        </td>
+                        <td height="22">
+                            <input name="txt_date" type="text" id="txt_date" title="退货日期">
+                        </td>
+                    </tr>
+                    <tr align="left" bgcolor="#FFFFFF">
+                        <td height="22" align="left">
+                            加盟商应收退款是否对账:
+                        </td>
+                        <td height="22">
+                            <input name="txt_fig" type="radio" value="1" checked>
+                            是
+                            <input type="radio" name="txt_fig" value="0">
+                            否
+                        </td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFFF">
+                        <td height="22" colspan="2">
+                            <input type="button" name="Submit" value="  商品销售退货  " onclick="Mycheck(this.form)">
+                        </td>
+                    </tr>
+                    </form>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="50" colspan="2" valign="middle" background="Image/New_images/top_02_02.jpg"
+                bgcolor="#f9f9f9">
+                <div align="center">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="26" align="center" valign="middle">
+                                <img src="Images/bottom_02_xian.gif" width="566" height="26">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle">
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

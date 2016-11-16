@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>通过按钮变换背景颜色</title>
+</head>
+
+<body>
+<script language="javascript">
+var Arraycolor=new Array("olive","teal","red","blue","maroon","navy","lime","fuschia","green","purple","gray","yellow","aqua","white","silver");
+var n=0;
+function turncolors(){
+	if (n==(Arraycolor.length-1)) n=0;
+	n++;
+	document.bgColor = Arraycolor[n];
+}
+</script>
+<form name="form1" method="post" action="">
+  <p>
+    <input type="button" name="Submit" value="变换背景" onclick="turncolors()">
+</p>
+  <p>用按钮随意变换背景颜色.</p>
+</form>
+</body>
+</html>

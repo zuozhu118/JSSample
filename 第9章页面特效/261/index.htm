@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>页面溶解效果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<center><img src="1.jpg" width="782" height="600"></center>
+<script language="javascript"> 
+var s="";
+for (var i=1;i<26;i++){
+	s=s+'<div id="div'+i+'" style="position:absolute; left:0px; top:0px; background-color:#0066FF; border:'+"0.1px"+' '+"solid"+' '+"#0066FF"+' "></div>';
+}
+document.write(s);
+var espeed=300;
+var counter=1;
+var temp=new Array();
+var oddwidth=parseInt(document.body.clientWidth/5);
+var oddheight=parseInt(document.body.offsetHeight/5);
+for (i=1;i<=25;i++){ 
+	temp[i]=eval("document.all.div"+i+".style");
+	temp[i].width=oddwidth;
+	temp[i].height=oddheight;
+} 
+for (i=1;i<=5;i++) 
+	temp[i].left=(i-1)*oddwidth;
+for (i=6;i<=10;i++){ 
+	temp[i].left=(i-6)*oddwidth;
+	temp[i].top=oddheight;
+} 
+for (i=11;i<=15;i++){ 
+	temp[i].left=(i-11)*oddwidth;
+	temp[i].top=2*oddheight;
+} 
+for (i=16;i<=20;i++){ 
+	temp[i].left=(i-16)*oddwidth;
+	temp[i].top=3*oddheight;
+} 
+for (i=21;i<=25;i++){ 
+	temp[i].left=(i-21)*oddwidth;
+	temp[i].top=4*oddheight;
+} 
+function whereat(){ 
+	var oddfew=Math.round(Math.random()*25);
+	if (oddfew==0) oddfew=1;
+	if (temp[oddfew].visibility!="hidden") 
+		temp[oddfew].visibility="hidden";
+	else{ 
+		while (temp[oddfew].visibility=="hidden"){ 
+			oddfew=Math.round(Math.random()*25);
+			if (oddfew==0) 
+				oddfew=1;
+		} 
+		temp[oddfew].visibility="hidden";
+	} 
+	if (counter==25){ 
+		clearInterval(beginerase);
+	} 
+	counter++;
+	espeed-=10;
+} 
+beginerase=setInterval("whereat()",espeed) 
+</script>
+</body>
+</html>

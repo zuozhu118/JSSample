@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>无间断的图片循环滚动效果</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta content="MSHTML 6.00.2800.1264" name="GENERATOR" />
+    <script language="javascript" type="text/javascript">
+        window.onload = function () {
+
+            //innerHTML:     设置或获取位于对象起始和结束标签内的 HTML
+            //scrollHeight:     获取对象的滚动高度。
+            //scrollLeft:       设置或获取位于对象左边界和窗口中目前可见内容的最左端之间的距离
+            //scrollTop:       设置或获取位于对象最顶端和窗口中可见内容的最顶端之间的距离
+            //scrollWidth:      获取对象的滚动宽度
+            //offsetHeight:    获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的高度
+            //offsetLeft:       获取对象相对于版面或由 offsetParent 属性指定的父坐标的计算左侧位置
+            //offsetTop:       获取对象相对于版面或由 offsetTop 属性指定的父坐标的计算顶端位置
+            //offsetWidth:     获取对象相对于版面或由父坐标 offsetParent 属性指定的父坐标的宽度
+
+            var n = 10;
+            var td1 = document.getElementById("td1");
+            var td2 = document.getElementById("td2");
+            var div1 = document.getElementById("div1");
+            document.getElementById("td2").innerHTML = document.getElementById("td1").innerHTML;
+            var Mycheck;
+            function move() {
+                if (div1.scrollLeft >= td2.offsetWidth) {//如果div1中的内容滚动到td1和td2的交界处时
+                    div1.scrollLeft = div1.scrollLeft - td1.offsetWidth;
+                }
+                else {
+                    div1.scrollLeft++;
+
+                } //div1.scrollLeft++;这一句才是实现了滚动效果；
+                Mycheck = setTimeout(move, n)//每隔10毫秒执行一次move方法；
+            }
+            div1.onmouseover = function () { clearTimeout(Mycheck) }//当鼠标移动上来时，停止移动；
+            div1.onmouseout = function () { Mycheck = setTimeout(move, n) }
+            move();
+        };
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <center>
+        <table style="width:750px;"
+            align="center" border="0">
+            <tr>
+                <td>
+                    <div id="div1" style="overflow: hidden; border: 3px green solid; width:750px;">
+                        <table cellspacing="0" cellpadding="0" align="left" border="0">
+                            <tr>
+                                <td id="td1" valign="top" style="background-color: Red;">
+                                    <table style="width:1710px;height:112px">
+                                        <tr>
+                                            <td width="171" style="background: url(1.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(2.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(3.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(4.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(5.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(6.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(7.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(8.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(9.jpg);">
+                                            </td>
+                                            <td width="171" style="background: url(10.jpg);">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td id="td2" valign="top" style="background-color:Orange;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

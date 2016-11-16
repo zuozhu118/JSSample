@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>检查表单元素是否为空</title>
+<link rel="stylesheet" href="Css/style.css" />
+<script language="javascript">
+// 检查表单元素是否为空
+    function check(Form) {//Form参数代表name等于form1，的form标签；
+	for(i=0;i<Form.length;i++){  
+		if(Form.elements[i].value == ""){         //Form的属性elements的首字e要小写
+			alert(Form.elements[i].title + "不能为空!");
+			Form.elements[i].focus();
+			return;
+		}
+	}
+	Form.submit();
+}
+</script>
+</head>
+
+<body>
+<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="22" background="images/bg_left.gif">&nbsp;</td>
+    <td width="760">
+<table width="760" height="547" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td height="126" align="center"><img src="images/bg_top.gif" width="761" height="126"></td>
+  </tr>
+  <tr>
+    <td height="326" valign="top">
+    <table width="100%" height="164" border="0" cellpadding="0" cellspacing="0" class="tableBorder_LRB">
+      <tr>
+        <td height="49" colspan="6" background="images/reply_navigate.gif">&nbsp;</td>
+        </tr>
+      <tr>
+        <td width="5%" height="143">&nbsp;</td>
+        <td colspan="4" align="center" valign="top">
+		<form name="form1" method="post" action="">
+		<table width="100%" height="276" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="16%" height="36" align="center">留言人：</td>
+            <td width="84%">
+              <input name="author" type="text" id="author" size="30" title="留言人">
+              *            </td>
+          </tr>
+          <tr>
+            <td height="38" align="center">Email：</td>
+            <td><input name="email" type="text" id="email" size="72" title="Email地址">
+              * </td>
+          </tr>
+          <tr>
+            <td height="160" align="center">留言内容：</td>
+            <td><textarea name="content" cols="70" rows="10" class="wenbenkuang" title="留言内容" id="content"></textarea>
+              *</td>
+          </tr>
+
+          <tr>
+            <td height="42" align="center">&nbsp;</td>
+            <td><input name="Submit" type="button" class="btn_grey" value="保存" onClick="check(form1)">
+              &nbsp;&nbsp;
+              <input name="Submit2" type="reset" class="btn_grey" value="重置">
+			   &nbsp;&nbsp;</td>
+          </tr>
+        </table>
+		</form>		</td>
+        <td width="6%">&nbsp;</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" class="tableBorder_LR"><table width="99%" height="72"  border="0" align="center" cellpadding="-2" cellspacing="-2">
+      <tr>
+        <td height="2" colspan="4"></td>
+        </tr>
+      <tr>
+        <td width="124" height="23">&nbsp;</td>
+        <td valign="bottom" align="center"> CopyRight &copy; 2007 www.mingrisoft.com 吉林省明日科技有限公司</td>
+        <td width="141">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="28">&nbsp;</td>
+        <td align="center">本站请使用IE6.0或以上版本 1024*768为最佳显示效果</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="8"></td>
+        <td height="8"></td>
+        <td height="8"></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+    <td width="19" background="images/bg_right.gif">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

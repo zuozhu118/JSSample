@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>抖动的图片</title>
+<style>
+.ditheringimg
+{
+	position : relative
+}
+</style>
+</head>
+<script language="javascript">
+var dithering = 8;//抖动频率
+var stopit = 0;
+var a=1;
+function init(which)
+{
+	stopit = 0;
+	shake = which;
+	shake.style.left = 0;
+	shake.style.top = 0;
+}
+function ditheringimage()
+{
+	if ((!document.all && !document.getElementByld)||stopit ==1)
+	return
+	if (a==1)
+	{
+		shake.style.top = parseInt(shake.style.top)+dithering;
+	}
+	else if (a==2)
+	{
+		shake.style.left = parseInt(shake.style.left)+dithering;
+	}
+	else if (a==3)
+	{
+		shake.style.top = parseInt(shake.style.top)-dithering;
+	}
+	else
+	{
+		shake.style.left = parseInt(shake.style.left)-dithering;
+	}
+	if (a<4)
+	a++;
+	else
+	a=1;
+	setTimeout("ditheringimage()",50);
+}
+function stoprattle(which)
+{
+	stopit = 1;
+	which.style.left = 0;
+	which.style.top = 0;
+}
+</script>
+
+<body>
+<img src="MR.gif" border="0" class="ditheringimg" onMouseOver="init(this);ditheringimage()" onMouseOut="stoprattle(this)">
+</body>
+</html>

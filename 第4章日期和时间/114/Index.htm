@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body background="temp.JPG">
+<script>
+// 显示日期和时间
+function ShowDate(Elements)
+{
+		var temp; 
+		var datetime = new Date();
+		var year = datetime.getYear();
+		var month = datetime.getMonth() + 1;
+		var date = datetime.getDate();
+		var day = datetime.getDay();
+		temp = year+"年"+month+"月"+date+"日 ";
+		Elements.innerHTML = temp;
+}
+function ShowTime(Elements)
+{
+		var temp = "";
+		var datetime = new Date();
+		var hour = datetime.getHours();
+		var minu = datetime.getMinutes();
+		var seco = datetime.getSeconds();
+		temp = temp+" "+hour+":"+minu+":"+seco+" ";
+		Elements.innerHTML = temp;   //这个Elements代表(表格)的id
+		window.setTimeout("ShowTime(" + Elements.id + ")",1000)   //这里Elements.name或Elements.id不是Elements
+}
+</script>
+
+<table width="197" height="28" border="1" cellpadding="2" cellspacing="2" bordercolor="#99FF00" >
+<tr>
+<td id="Time1"><script>ShowDate(Time1);</script></td>
+<td width="92" id="Time2"><script>ShowTime(Time2);</script>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

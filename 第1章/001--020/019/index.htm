@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>旋转的窗口</title>
+</head>
+<body>
+<img align="left" src="6.jpg" width="150" height="60">
+<script language="javascript"> 
+var a=275; 
+var b=275; 
+var pp;
+var r=80;
+var x=y=0;
+window.resizeTo(400,400); //让当前窗口的宽度是400，高度是400； 
+function eddy(i){ 
+	var ob=document.all("tt");
+	x = r*Math.cos((i*Math.PI)/180)+a;//设定窗口移动的横坐标；通过i的值的变化引起（x,y）这个坐标的变化；
+	y = r*Math.sin((i*Math.PI)/180)+b;//y表示窗口移动的纵坐标；
+	window.moveTo(x,y);//让当前窗口移动到（x,y)坐标位置； 
+	i=i+1;
+	if (r>100){window.clearTimeout(pp);}
+	else{
+		if (i>360){i=0;}
+ 		pp=setTimeout("eddy("+i+")",10);
+	}
+}
+eddy(0);
+</script>
+</body>
+</html>

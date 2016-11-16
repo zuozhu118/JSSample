@@ -1,0 +1,178 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+input, a {
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background: #E3396F;
+}
+
+input {
+    opacity: 0; /*将透明度设置为0实现隐藏效果*/
+    z-index: 100;
+    cursor: pointer;
+}
+
+a {
+    z-index: 10;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.controller2, .controller2 + a {
+    left: 20%;
+}
+
+.controller3, .controller3 + a {
+    left: 40%;
+}
+
+.controller4, .controller4 + a {
+    left: 60%;
+}
+
+.controller5, .controller5 + a {
+    left: 80%;
+}
+
+input:checked + a /*被选中的单选框后面的a标签*/ {
+    background: #841034;
+}
+
+    input:checked + a::after /*给被选中的input的a标签后面添加三角形*/ {
+        content: "";
+        position: absolute;
+        border: 20px solid transparent;
+        border-bottom-color: #841034;
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%); /*向左平移50%实现水平居中*/
+    }
+/*=====================  导航栏结束==============*/
+
+.content, section {
+    width: 100%;
+    height: 100%;
+    /*border:1px solid;*/
+    position: relative;
+}
+
+.content {
+    transition: transform 1s ease-in-out;
+}
+
+.controller1:checked ~ .content {
+    transform: translateY(0%);
+}
+
+.controller2:checked ~ .content {
+    /*让controller2这个被选中的checked后面的content想下平移100%*/
+    transform: translateY(-100%);
+}
+
+.controller3:checked ~ .content {
+    transform: translateY(-200%);
+}
+
+.controller4:checked ~ .content {
+    transform: translateY(-300%);
+}
+
+.controller5:checked ~ .content {
+    transform: translateY(-400%);
+}
+
+h2 {
+    position: relative;
+    top: 100px;
+}
+
+p {
+   /*border:1px solid;*/ 
+   min-width:580px;
+}
+
+h2 ~ p {
+    position: relative;
+    top: 200px;
+    color: red;
+}
+
+/*================用animation动画让h2标题内容向下跳动===============*/
+.controller1:checked ~ .content .section1 h2,
+.controller2:checked ~ .content .section2 h2,
+.controller3:checked ~ .content .section3 h2,
+.controller4:checked ~ .content .section4 h2,
+.controller5:checked ~ .content .section5 h2 {
+    animation: MoveDown 2s ease-in 0.2s both;
+    -webkit-animation: MoveDown 2s ease-in 0.2s both; /*both：设置对象状态为动画结束或开始的状态*/
+    -moz-animation: MoveDown 2s ease-in 0.2s both;
+    -o-animation: MoveDown 2s ease-in 0.2s both;
+    -ms-animation: MoveDown 2s ease-in 0.2s both;
+}
+
+@keyframes MoveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+        color: red;
+        /*font-size:20px;*/
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        color: blue;
+        /*font-size:40px;*/
+    }
+}
+/*================用animation动画让p标签内容向上跳动===============*/
+
+.controller1:checked ~ .content .section1 p,
+.controller2:checked ~ .content .section2 p,
+.controller3:checked ~ .content .section3 p,
+.controller4:checked ~ .content .section4 p,
+.controller5:checked ~ .content .section5 p {
+    animation: MoveUp 2s ease-in 0.2s forwards;
+    -webkit-animation: MoveUp 2s ease-in 0.2s forwards; /*forwards：设置对象状态为动画结束时的状态*/
+    -moz-animation: MoveUp 2s ease-in 0.2s forwards;
+    -o-animation: MoveUp 2s ease-in 0.2s forwards;
+    -ms-animation: MoveUp 2s ease-in 0.2s forwards;
+}
+
+@keyframes MoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+        color: red;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-40px);
+        color: blue;
+    }
+}

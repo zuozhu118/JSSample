@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>按下回车键时自动切换焦点</title>
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+.wenbenkuang {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+-->
+</style>
+<script type="text/javascript">
+    //onkeypress事件执行Myenter方法；
+    //onkeypress 事件会在键盘按键被按下并释放一个键时发生。
+    function Myenter(str,event) {  //str参数表示文本框对象；
+        var e = event || window.event;
+    if (e.keyCode == 13) { //keyCode == 13表示用户按下了回车键；
+        str.focus();
+        alert("回车键被按下啦---");
+    }
+
+}
+</script>
+</head>
+<body style="font-size:12px">
+<table width="547" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="8" background="images/right_a01.jpg"></td>
+  </tr>
+  <tr>
+    <td valign="top" background="images/right_a03.jpg"><table width="532" border="0" align="center" cellpadding="0" cellspacing="0">
+        <form name="form1">
+          <tr>
+            <td height="27" colspan="2" align="left" background="images/sub_02.jpg" class="font_white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style1">用户注册</span></td>
+          </tr>
+          <tr>
+            <td width="172" height="22" align="right">用户名称:</td>
+            <td width="328" height="22"><input name="用户名称" type="text" class="wenbenkuang" id="用户名称" maxlength="50" onkeypress="Myenter(form1.密码,event)" /></td>
+          </tr>
+          <tr>
+            <td height="22" align="right">密
+              码:</td>
+            <td height="22"><input name="密码" type="password" class="wenbenkuang" id="密码" maxlength="50" onkeypress="Myenter(form1.真实姓名,event)" /></td>
+          </tr>
+          <tr>
+            <td height="22" align="right">真实姓名:</td>
+            <td height="22"><input name="真实姓名" type="text" class="wenbenkuang" id="真实姓名" size="30" maxlength="50" onkeypress="Myenter(form1.联系方式,event)" /></td>
+          </tr>
+          <tr>
+            <td height="22" align="right">联系方式:</td>
+            <td height="22"><input name="联系方式" type="text" class="wenbenkuang" id="联系方式" size="30" maxlength="30" onkeypress="Myenter(form1.Email,event)"  /></td>
+          </tr>
+          <tr>
+            <td height="22" align="right">E-mail:</td>
+            <td height="22"><input name="Email" type="text" class="wenbenkuang" id="Email" size="30" maxlength="100" onkeypress="Myenter(form1.add,event)"/></td>
+          </tr>
+          <tr>
+            <td height="22" colspan="2" align="center"><input name="add" type="button" class="button" id="add" value="提 交" onclick="form1.submit();" />
+&nbsp;
+              <input type="reset" name="Submit2" value="重 置" class="button" /></td>
+          </tr>
+        </form>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="8" background="images/right_a02.jpg"></td>
+  </tr>
+</table>
+</body>
+</html>

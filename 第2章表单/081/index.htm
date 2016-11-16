@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>自动提交表单</title>
+</head>
+<body style="font-size: 12px">
+    <table width="540" border="0" align="center" cellpadding="0" cellspacing="0" background="images/bg.jpg">
+        <tr>
+            <td height="18" align="center" valign="middle">
+                <font size="-1"><a href="#" onclick="Time_limit()">开始考试</a></font>
+            </td>
+        </tr>
+        <tr>
+            <td height="28" align="center" valign="middle">
+                <font color="#FF0000" size="+1" style="font-weight: bolder">计算机**考试</font>
+            </td>
+        </tr>
+        <tr>
+            <td height="18" align="center" valign="top">
+                <form name="form1">
+                <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td height="28" align="left" valign="top">
+                            满分100分 单选题40分 多选题60分 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;剩余时间:<font
+                                color="#FF0000" id="showtimeID"></font> 秒
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left">
+                            一 、单选题(每题5分,答错不得分)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left">
+                            [1]一般而言,Internet防火墙建立在一个网络的哪个部分?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left">
+                            <input type="radio" name="radiobutton" value="1"/>
+                            每个子网的内部
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left">
+                            <input type="radio" name="radiobutton" value="2"/>
+                            内部子网之间传送信息的中枢
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left">
+                            <input type="radio" name="radiobutton" value="3"/>
+                            内部网络与外部网络的交叉点
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20" align="left">
+                            <input type="radio" name="radiobutton" value="4"/>
+                            部分子网与外部网络的结合点
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="28" align="center">
+                            <input name="sec_nums" type="hidden" id="sec_nums"/>
+                            <div id="showID" style="display: none">
+                                <input name="sure" type="submit" id="sure" value="考试结束"/>
+                             </div>
+                            &nbsp;&nbsp;
+                            <div id="hiddenID">
+                                <input name="sure2" type="submit" id="sure2" value="考试结束" disabled='disabled'/>
+                            </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+<script type="text/javascript">
+    var sec = 5;
+    function Time_limit() {
+        document.getElementById("showID").style.display="block";
+        document.all.hiddenID.style.display = "none";
+        var thistime = document.form1.sec_nums.value; //sec_nums是隐藏域的name值；
+        document.all.showtimeID.innerHTML = thistime;
+        if (thistime <= 0) {
+            document.form1.submit();
+        }
+        document.form1.sec_nums.value = thistime - 1;
+        var timer = window.setTimeout("Time_limit()", 1000);
+    }
+    document.all.form1.sec_nums.value = sec;
+</script>
+</html>

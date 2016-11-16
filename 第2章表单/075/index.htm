@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>只有一个复选框时控制复选框的全选或反选</title>
+<style>
+.white{color:#FFFFFF; font-weight:bold}
+</style>
+<script type="text/javascript">
+function CheckAll(elementsA,elementsB)
+{
+	var len = elementsA;
+	if(len.length > 0)	{}
+	else
+	{
+		len.checked = true;
+		if(elementsB.checked == false)
+		{
+			len.checked = false;
+		}
+	}
+}
+</script>
+</head>
+<body style="font-size:12px">
+<form name="form1">
+  <table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#60A2EA">
+    <tr bgcolor="#FFFFFF">
+      <td height="22" colspan="5" align="left">文章信息查看</td>
+    </tr>
+    <tr align="center" class="white">
+      <td height="22">选择</td>
+      <td height="22">文章类别</td>
+      <td height="22">作者名称</td>
+      <td height="22">文章标题</td>
+    </tr>
+    <tr align="center" bgcolor="#FFFFFF">
+      <td height="22"><input name="chk_id" type="checkbox" id="chk_id" value="1"></td>
+      <td height="22"> 展望未来</td>
+      <td height="22"> future</td>
+      <td height="22"> 掌握自己的路标</td>
+    </tr>
+    <tr align="center" bgcolor="#FFFFFF">
+      <td height="22" colspan="4" align="left">&nbsp;&nbsp;
+        <input name="chk_all" type="checkbox" id="chk_all" value="checkbox" onClick="CheckAll(this.form.chk_id,this.form.chk_all)">
+      [全选/反选]</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

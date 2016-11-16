@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>通过鼠标滚轮放大缩小图片</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-size: 16px;
+}
+-->
+</style>
+</head>
+<script language="javascript">
+    function bigimg(i, evt) {
+
+        //火狐浏览器不兼容鼠标滚轮事件；
+
+    var e = window.event || evt;
+	var zoom = parseInt(i.style.zoom,10)||100;
+	zoom += e.wheelDelta / 12;
+	if(zoom > 0 )
+	i.style.zoom=zoom+'%';
+	return false;
+}
+</script>
+<body>
+<table width="100%">
+  <tr>
+    <td><span class="style1">请滚动鼠标滚轮</span></td>
+  </tr>
+</table>
+<center>
+<a href="http://www.mingrisoft.com">
+<img src="image.jpg" width="461" height="277" border="1" onmousewheel="return bigimg(this,event)">
+</a>
+</center>
+</body>
+</html>

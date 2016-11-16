@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>定时隐藏图片</title>
+</head>
+<SCRIPT LANGUAGE="JavaScript">
+var sec=10;
+var timer;
+function hidepic()
+{
+	sec--;//让sec减减；
+	if (sec == 0) {
+		document.getElementById("textID").value = "图片被隐藏";	
+		soccer.style.visibility =(soccer.style.visibility == "hidden") ? "visible" : "hidden";
+	}
+	else{
+	    document.getElementById("textID").value = "图片会在 " + sec + " 秒后隐藏";
+		setTimeout("hidepic()",1000);
+	}
+}
+</SCRIPT>
+<body onLoad = "hidepic();">
+<center>
+    <input name="textfield" type="text" size="20" id="textID"/> <br/>
+	<DIV ID="soccer" STYLE="position:absolute; left:333px; top:43px">
+	<img border="0" src="bg.jpg" >
+	</DIV>
+</center>  
+</body>
+</html>

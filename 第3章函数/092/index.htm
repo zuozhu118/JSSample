@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>验证车牌号码</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="CSS/style.css" rel="stylesheet">
+<script language="javascript">
+function check(form){
+	if(form.carNo.value==""){
+		alert("请输入车牌号码!");form.carNo.focus();return;	
+	}
+	if(!checkNo(form.carNo.value)){
+		alert("您输入的车牌号码不正确!");form.carNo.focus();return;	
+	}	
+	form.submit();
+}
+</script>
+<script language="javascript">
+function checkNo(str){
+	var Expression=/^[\u4E00-\u9FA5]?[a-zA-Z]-\w{5}$/; 	
+	var objExp=new RegExp(Expression);
+	return objExp.test(str)
+}
+</script>
+
+</head>
+<body>
+<table width="597"  border="0" cellspacing="0" cellpadding="0" align="center">
+ <tr>
+ <td width="597" class="tableBorder">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="69%" height="189" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="80" background="images/center.gif">&nbsp;</td>
+              </tr>
+            <tr valign="top">
+              <td height="134" align="center">
+<form method="post" action="" name="form1">
+                    <table width="100%" height="298"  border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td height="26" align="center">车牌号码：</td>
+                        <td width="74%"><input name="carNo" type="text" id="carNo">
+                          *(格式为：吉Z-00000)</td>
+                      </tr>
+                      <tr>
+                        <td height="26" align="center">车辆类型：</td>
+                        <td><input name="carType" type="text" id="carType">
+                          *</td>
+                      </tr>
+                      <tr>
+                        <td height="26" align="center">车辆品名：</td>
+                        <td><input name="pm" type="text" id="pm">
+                          *</td>
+                      </tr>
+                      <tr>
+                        <td height="26" align="center">车辆限重：</td>
+                        <td><input name="xz" type="text" id="xz">
+                          *</td>
+                      </tr>
+                      <tr>
+                        <td height="26" align="center">驾驶员姓名：</td>
+                        <td>                          <input name="jsy" type="text" id="jsy">
+                        *</td>
+                      </tr>
+                      <tr>
+                        <td height="26" align="center">驾驶证号码：</td>
+                        <td>                          <input name="cardNo" type="text" id="cardNo">
+                        *</td>
+                      </tr>
+                      <tr>
+                        <td height="88" align="center">备&nbsp;&nbsp;&nbsp;&nbsp;注：</td>
+                        <td><textarea name="bz" cols="50" rows="5" class="textarea" id="bz"></textarea></td>
+                      </tr>
+                      <tr align="center">
+                        <td colspan="2"><input name="Button" type="button" class="btn_grey" value="提交" onClick="check(form1)">
+                           &nbsp;
+                           <input name="Submit2" type="button" class="btn_grey" value="返回" onClick="history.back(1);"></td>
+                        </tr>
+                    </table>
+</form>
+			  </td>
+            </tr>
+            <tr>
+              <td height="38" align="right" background="images/center02.gif"></td>
+              </tr>
+          </table>
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="790"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

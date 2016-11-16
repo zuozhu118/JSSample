@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>多级级联菜单</title>
+<script type="text/javascript">
+var arr2 = new Array(3);
+arr2["数码设备"] = new Array("数码相机","打印机");
+arr2["家用电器"] = new Array("电视机","电冰箱");
+arr2["礼品工艺"] = new Array("鲜花","彩带");
+function removeinfo(classMenu){//将下拉框各选项清空
+  for (var i=0; i < classMenu.options.length; i++){
+    classMenu.options[i]=null;
+  }
+}
+function changeMenu(classList,classMenu){
+  removeinfo(classMenu)
+  for (var i=0; i < classList.length; i++){
+      classMenu[i]=new Option(classList[i],classList[i]);
+  }
+}
+</script>
+</head>
+<body style="font-size:12px">
+<table width="487" height="333" border="0" align="center" cellpadding="0" cellspacing="0" background="bg.JPG">
+  <tr>
+    <td align="center" valign="top"><br>
+      <br>
+      <br>
+      <br>      <br>      <table width="86%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#6699CC">
+      <form name="form1">
+        <tr bgcolor="#FFFFFF">
+          <td height="22" align="right">所属类别:</td>               <!--changeMenue方法，第一个参数，是arr2数组中第一个下拉框中选中的option的值，第二个参数是第二个下拉框的select对象；-->
+          <td height="22" align="left"><select name="类别" id="类别" onchange="changeMenu(arr2[document.form1.类别.options[document.form1.类别.selectedIndex].text],document.form1.分类);">
+              <option selected>数码设备</option>
+              <option>家用电器</option>
+              <option>礼品工艺</option>
+              
+            </select>
+              <select name="分类" id="分类">
+                <option>数码相机</option>
+                <option>打印机</option>
+                </select></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td height="22" align="right">商品名称:</td>
+          <td height="22" align="left"><input name="商品名称" type="text" id="商品名称" size="30" maxlength="50"></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td height="22" align="right">会员价:</td>
+          <td height="22" align="left"><input name="会员价" type="text" id="会员价" size="10"></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td height="22" align="right">提供厂商:</td>
+          <td height="22" align="left"><input name="提供厂商" type="text" id="提供厂商" size="30" maxlength="50"></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td height="22" align="right">商品简介:</td>
+          <td height="22" align="left"><textarea name="商品简介" cols="35" rows="4" id="商品简介"></textarea></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td height="22" align="right">商品数量:</td>
+          <td height="22" align="left"><input name="商品数量" type="text" id="商品数量" size="10"></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+          <td height="22" colspan="2" align="center"><input name="add" type="submit" id="add2" value="添 加">
+&nbsp;
+        <input type="reset" name="Submit2" value="重 置"></td>
+        </tr>
+      </form>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>弹出的窗口之Cookie控制</title>
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+
+<Script Language="JavaScript">
+function openWindow(){
+    window.open("placard.htm","","width=352,height=193")
+}	
+function GetCookie(name){
+	var search = name + "=";
+	var returnvalue = "";
+	var offset,end;
+	if(document.cookie.length>0){
+	    offset = document.cookie.indexOf(search);
+	    if(offset != -1){
+	        offset += search.length;
+	        end = document.cookie.indexOf(";",offset);
+	        if(end == -1) end = document.cookie.length;
+	        returnvalue = unescape(document.cookie.substring(offset,end));
+	    }
+	}
+	return returnvalue;
+}
+
+
+function LoadPop(){
+	if(GetCookie("pop")==""){
+	    openWindow();
+		var today = new Date()
+		var time="Sunday,1-jan-"+today.getYear()+1+" 23:59:59 GMC";
+		document.cookie="pop=yes;expires="+time;
+	}
+}
+</Script>
+<body onLoad="LoadPop()">
+<table width="686" height="292" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="gougo.jpg" width="800" height="810" /></td>
+  </tr>
+</table>
+</body>
+</html>

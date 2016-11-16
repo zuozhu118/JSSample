@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="Content-Type" content="text/html; charset=gb2312"/>
+<meta name="save" content="history"/>
+<title>带记忆功能的表单</title>
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+input{
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+
+.saveHistory{
+behavior:url(#default#savehistory);
+}
+-->
+</style>
+</head>
+<body style="font-size:12px">
+<form name="form1">
+  <table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF9900">
+    <tr>
+      <td height="22" colspan="4"><span class="style1" style="font-weight:bolder">&nbsp;&nbsp;添加商品信息</span></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td height="22">商品名称:</td>
+      <td height="22" colspan="3"><input name="textfield" type="text" class="wenbenkuang" size="35"/></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td height="22">商品规格:</td>
+      <td height="22"><input name="textfield2" type="text" class="wenbenkuang"/></td>
+      <td height="22">计量单位:</td>
+      <td height="22"><input name="txt_unit" type="text" class="saveHistory" id="txt_unit"/></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td height="22">供应商:</td>
+      <td height="22" colspan="3"><input name="txt_co" type="text" class="saveHistory" id="txt_co" size="35"/></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td height="22">出厂日期:</td>
+      <td height="22" colspan="3"><input name="textfield5" type="text" class="wenbenkuang"/></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td height="22">&nbsp;</td>
+      <td height="22" colspan="3"><input type="button" name="Submit" value="确定" onclick="javascript:window.location.href='test.htm';"/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="reset" name="Submit2" value="重置"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>网页中应用浮动框架</title>
+</head>
+<body  topmargin="0" leftmargin="0">
+  <table width="500"  border="0" cellspacing="0" cellpadding="0" align=center>
+  <tr>
+  <td height="27" colspan=5 align=center><font color="red">管 理 考 生 成 绩</font></td>
+  </tr>
+  <tr>
+    <td width="29%" height="26" align=right nowrap style="color:black;">查询条件：</td>
+    <td width="17%">
+	<select name="condition" class="wenbenkuang" style="width:150;border:1px solid;">
+	<option value="stu_id">学生证号</option>
+	<option value="which_lesson">考试课程</option>
+	<option value="taotiname">套题名称</option>
+	<option value="res_subdate">考试时间</option>
+	</select>
+	</td>
+    <td width="9%" align = right nowrap style="color:black;">关键字：</td>
+    <td width="24%"><input name="key" type="text" class="txt_grey"></td>
+    <td width="21%"><input name="submit" type="submit" class="btn_grey" value="查询"></td>
+    </tr>
+</table>
+<table width="98%"  border="1" cellspacing="0" cellpadding="0" align="center"
+ bordercolor="#FFFFFF" bordercolordark="#1985DB" bordercolorlight="#FFFFFF"> 
+  <tr>
+  	<td width="4%" height="27"  align="center" nowrap style="color:black;">选 项</td>
+    <td width="13%" height="27"  align="center" nowrap style="color:black;">学生证号</td>
+	<td width="16%" height="27"  align="center" nowrap style="color:black;">考试课程</td>
+	<td width="14%" height="27"  align="center" nowrap style="color:black;">套题名称</td>
+	<td width="13%" height="27"  align="center" nowrap style="color:black;">单选成绩</td>
+	<td width="11%" height="27"  align="center" nowrap style="color:black;">多选成绩</td>
+	<td width="11%" height="27"  align="center" nowrap style="color:black;">总成绩</td>
+	<td width="18%" height="27" align="center" nowrap style="color:black;">考试时间</td>
+  </tr>
+  <tr>
+    <td height="27"  align="center" nowrap="nowrap"><input type="checkbox" name="ChkBox" style="border:0;" />
+    </td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">20070326</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">数学</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">第一套</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">56</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">51</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">107</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">2007-03-08</td>
+  </tr>
+  <tr>
+    <td height="27"  align="center" nowrap="nowrap"><input type="checkbox" name="ChkBox" style="border:0;" />    </td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">20078916</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">语文</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">第三套</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">65</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">20</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">85</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">2007-03-13</td>
+  </tr>
+  <tr>
+    <td height="27"  align="center" nowrap="nowrap"><input type="checkbox" name="ChkBox" style="border:0;" />    </td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">20071691</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">英语</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">第五套</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">38</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">60</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">98</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">2007-03-15</td>
+  </tr>	
+  <tr>
+    <td height="27"  align="center" nowrap="nowrap"><input type="checkbox" name="ChkBox" style="border:0;" />    </td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">20071244</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">历史</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">第七套</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">60</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">60</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">120</td>
+    <td height="27"  align="center" nowrap="nowrap" style="color:black;">2007-03-18</td>
+  </tr>
+</table>
+<table  width="100%"  border="0" cellspacing="0" cellpadding="0" align=center>
+<tr>
+<td colspan=5>&nbsp;</td>
+</tr>
+<tr>
+<td width="3%" height="26" align=right nowrap><input name="Chkall" type="checkbox" style="border:0;">
+</td>
+<td width="7%" align=center nowrap style="color:black;">[全选/反选]</td>
+<td width="30%" nowrap>[删除]</td>
+<td width="2%"></td>
+<td width="58%">
+<table  width="100%"  border="0" cellspacing="0" cellpadding="0" align=center>
+<tr>
+<td align=right nowrap style="color:black;">
+
+第一页&nbsp;上一页&nbsp;下一页&nbsp;最后一页</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

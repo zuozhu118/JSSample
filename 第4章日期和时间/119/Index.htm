@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-size: 9pt;
+}
+-->
+</style>
+</head>
+
+<body>
+<script language="javascript">
+function leapyear()
+{
+	var now = new Date();
+	var years = now.getFullYear(document.form1.textfield.value);
+	var str;
+	var years = document.form1.textfield.value;
+	var result =(years%4==0 && years%100!=0)||(years%400==0)?years+"是闰年":years+"不是闰年";
+	document.form1.textfield2.value = result;
+}
+</script>
+<form name="form1" method="post" action="">
+<table width="392" height="64" border="1" align="center" cellpadding="3" cellspacing="2" bordercolor="#9999FF">
+  <tr>
+    <td width="152" height="30"><span class="style1">请输入一个四位数的年份：</span></td>
+    <td width="216"><table width="196" height="29" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="136"><input name="textfield" type="text" value="2007" size="20">
+      </td>
+        <td width="60">&nbsp;
+          <input type="button" name="Button" value="计算" onClick="leapyear();"></td>
+      </tr>
+    </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <input name="textfield2" type="text" value="" size="51">   </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

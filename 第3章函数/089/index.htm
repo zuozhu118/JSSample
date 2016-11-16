@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>验证输入的字符串是否为汉字</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="Css/style.css" rel="stylesheet">
+<script language="javascript">
+function checkrealname(realname){
+	var str=realname;
+	 //在JavaScript中，正则表达式只能使用"/"开头和结束，不能使用双引号
+	var Expression=/[^\u4E00-\u9FA5]/; 
+	var objExp=new RegExp(Expression);
+	if(objExp.test(str)==true){
+		return true;
+	}else{
+		return false;
+	}
+}
+function check(myform){
+	if(myform.realname.value==""){
+		alert("请输入真实姓名!");myform.realname.focus();return;
+	}
+	if(checkrealname(myform.realname.value)){
+		alert("您输入真实姓名不正确!");myform.realname.focus();return;
+	}
+	myform.submit();
+}
+</script>
+</head>
+<body>
+<table width="694" height="341"  border="0" align="center" cellpadding="-2" cellspacing="-2">
+  <tr>
+    <td valign="top">
+      <table width="100%" height="492"  border="0" cellpadding="-2" cellspacing="-2" class="tableBorder">
+        <tr>
+          <td height="32" background="Images/board_left.gif"><img src="Images/01.gif" width="694" height="168"></td>
+        </tr>
+        <tr valign="top">
+          <td height="322"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="35" height="322" valign="top"><img src="Images/02.gif" width="35" height="89"></td>
+              <td valign="top">
+<table width="100%" height="292"  border="0" cellpadding="-2" cellspacing="-2" class="tableBorder_Top">
+			  <tr>
+			  <td height="5"></td>
+			  </tr>
+                <tr>
+                  <td width="170" height="281" valign="top" class="tableBorder_r"><table width="96%"  border="0" cellspacing="-2" cellpadding="-2">
+                    <tr>
+                    <td width="55%" height="82" align="center" class="word_grey">&nbsp;<img src="Images/reg.gif" width="84" height="54"></td>
+                    <td width="45%" align="left" class="word_grey"><b>注册帮助</b></td>
+                    </tr>
+                    <tr>
+                      <td height="112" colspan="2" valign="top" class="word_grey"><ul>
+                        <li>
+                        用户名：为用户登录网站的通行证，长度控制在3-20个字符之内。<br>
+                        <br>
+                        </li>
+                          <li>密码：请设定在6-20位之间。<br>
+                            <br>
+                          </li>
+                          <li>真实姓名：真实姓名由汉字组成。</li>
+                      </ul>
+                            </td>
+                    </tr>
+                    <tr align="center">
+                      <td colspan="2" valign="middle" class="word_grey"></td>
+                    </tr>
+                  </table></td>
+                  <td width="1"></td>
+                  <td width="400" valign="top">
+                    <table width="90%"  border="0" align="center" cellpadding="-2" cellspacing="-2">
+                    <tr>
+                      <td><form action="" method="post" name="form1">
+                        <table width="100%"  border="0" cellspacing="-2" cellpadding="-2">
+                          <tr>
+                            <td height="10" colspan="2" align="center"></td>
+                            </tr>
+                          <tr>
+                            <td width="18%" height="29" align="center">用 户 名：</td>
+                            <td width="82%"><input name="UserName" type="text" id="UserName4" maxlength="20"></td>
+                          </tr>
+                          <tr>
+                            <td height="28" align="center">密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+                            <td height="28"><input name="PWD1" type="password" id="PWD14" size="20" maxlength="20"></td>
+                            </tr>
+                          <tr>
+                            <td height="28" align="center">确认密码：</td>
+                            <td height="28"><input name="PWD2" type="password" id="PWD25" size="20" maxlength="20"></td>
+                          </tr>
+                          <tr>
+                            <td height="28" align="center">性&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
+                            <td><input name="sex" type="radio" class="noborder" value="男" checked>
+                              男&nbsp;
+  <input name="sex" type="radio" class="noborder" value="女">
+  女</td></tr>
+                            <tr>
+                            <td height="28" align="center">真实姓名：</td>
+                            <td class="word_grey"><input name="realname" type="text" id="realname" maxlength="20">
+                            *</td>
+                          </tr>
+                          <tr>
+                            <td height="28" align="center">生&nbsp;&nbsp;&nbsp;&nbsp;日：</td>
+                            <td class="word_grey"><input name="birthday" type="text" id="Tel">
+                              （日期格式为：yyyy-mm-dd ）</td>
+                          </tr>
+                          <tr>
+                            <td height="28" align="center">OICQ号码：</td>
+                            <td><input name="qq" type="text" id="qq"></td>
+                            </tr>
+
+                          <tr>
+                            <td height="28" align="center" style="padding-left:10px">Email：</td>
+                            <td class="word_grey"><input name="Email" type="text" id="PWD224" size="50">                            </td>
+                          </tr>
+                          <tr>
+                            <td height="34">&nbsp;</td>
+                            <td class="word_grey"><input name="Button" type="button" class="btn_grey" value="确定保存" onClick="check(form1)">
+                                <input name="Submit2" type="reset" class="btn_grey" value="重新填写"></td>
+                          </tr>
+                        </table>
+					  
+					  </form></td>
+                    </tr>
+                  </table></td>
+                </tr>
+				<tr>
+				<td height="5"></td>
+				</tr>
+              </table>			  
+			  </td>
+              <td width="44" valign="top"><img src="Images/04.gif" width="44" height="89"></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

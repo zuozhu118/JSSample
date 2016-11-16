@@ -1,0 +1,38 @@
+
+<html>
+<head>
+<title>广告栏1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<font style="font-size:10px ">
+明日公司最新出版图书:<BR>
+Visual C++开发技术大全<BR>
+Delphi开发技术大全<BR>
+Visual Basic开发技术大全<BR>
+ASP开发技术大全<BR>
+ASP.NET程序开发范例宝典<BR>
+JSP程序开发范例宝典<BR>
+Java数据库系统开发案例精选<BR>
+SQL Server管理与开发技术大全<BR>
+</font>
+<script language="javascript">
+var W=document.body.clientWidth;
+var H=document.body.clientHeight;
+var L=window.screen.width-W;
+var T=window.screen.height;
+self.moveTo(L,T);
+self.focus();
+function drop(n) {
+	if (n>(T-H-60)){
+		self.moveTo(L-12,--n);
+		var tim=setTimeout("drop("+n+")",10000);
+	}
+	else{clearTimeout(tim)}
+}
+drop(T);
+</script>
+
+</body>
+</html>

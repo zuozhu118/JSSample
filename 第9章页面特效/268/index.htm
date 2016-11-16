@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>广告随滚动条漂移</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<script language="JavaScript">
+var delta=0.08
+var layers;
+function floaters(){
+	this.items= [];
+	this.addItem= function(id,x,y,content){
+		document.write('<DIV id='+id+' style="Z-INDEX: 10; POSITION: absolute;  width:180px; height:130px;left:'+x+';top:'+y+'">'+content+'</DIV>');
+        var newItem= {};
+        newItem.object= document.getElementById(id);
+		if(y>10) {y=document.body.clientHeight-140}
+        newItem.x= x;
+        newItem.y= y; 
+        this.items[this.items.length]= newItem;
+    }
+    this.play= function(){
+        layers= this.items;
+        setInterval('play()',10);
+    }
+}
+function play(){
+	for(var i=0;i<layers.length;i++){
+		var obj= layers[i].object;
+        var obj_x=layers[i].x;
+        var obj_y=layers[i].y; 
+        if(obj.offsetLeft!=(document.body.scrollLeft+obj_x)){
+			var dx=(document.body.scrollLeft+obj_x-obj.offsetLeft)*delta;
+            dx=(dx>0?1:-1)*Math.ceil(Math.abs(dx));
+            obj.style.left=obj.offsetLeft+dx;
+        } 
+        if(obj.offsetTop!=(document.body.scrollTop+obj_y)) {
+            var dy=(document.body.scrollTop+obj_y-obj.offsetTop)*delta;
+            dy=(dy>0?1:-1)*Math.ceil(Math.abs(dy));
+            obj.style.top=obj.offsetTop+dy;
+        }
+        obj.style.display= '';
+	}
+}
+function excur(){    
+	var strfloat = new floaters();
+	strfloat.addItem('div1',document.body.clientWidth-180,document.body.clientHeight-130,'<img src=2.jpg  border=1 style="border-color:#FFFFFF">'); 
+	strfloat.play();
+}
+excur();
+</script>
+<center>
+<img src="gougo.jpg">
+</center>
+</body>
+</html>

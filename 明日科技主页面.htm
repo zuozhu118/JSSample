@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>吉林省明日科技有限公司|编程</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="js/slides.min.jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#slides').slides({
+                play: 1000, //play 自动播放切换幻灯的时间间隔 整数 0不自动切换;
+                pause: 1000, //pause 当点击 next/prev或分页按钮后暂停多少毫秒才切换图片 整数; 
+                hoverPause: true, //hoverPause 当鼠标移动到图片上的时候，幻灯片切换是否暂停 true或false;
+                animationStart: function () {//animationStart 当动画开始时调用的函数;
+                    $('.caption').animate({
+                        bottom: -30
+                    }, 100);
+                },
+                animationComplete: function (current) {//animationComplete 当动画结束时调用的函数;
+                    $('.caption').animate({
+                        bottom: 50
+                    }, 200);
+                    if (window.console && console.log) {
+                        console.log(current);
+                    };
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="banner">
+            <div id="example">
+                <img src="images/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon" />
+                <div id="slides">
+                    <div class="slides_container">
+                        <div>
+                            <a href="http://www.mrbccd.com/cpzx.php?type=6" title="明日科技 | 编程词典珍藏版！" target="_blank">
+                                <img src="images/06.jpg" width="983" height="416" alt="PHP编程词典个人版！" /></a>
+                            <div>
+                                <div class="caption" style="bottom: 0">
+                                    <p>
+                                        编程词典珍藏版隆重问世！</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="http://www.mrbccd.com/cpzx.php" title="明日的承诺 | 编程词典中所有资源不会涉及任何版权问题，读者可以放心使用！"
+                                target="_blank">
+                                <img src="images/01.jpg" width="983" height="416" alt="源代码、源程序，方便使用，全面学习！" /></a>
+                            <div>
+                                <div class="caption">
+                                    <p>
+                                        编程词典中提供了丰富的源码、项目、范例、技巧和方案等资源，用户可以应用这些资源，也可以根据自己的需求对其进行再次开发。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="http://www.mrbccd.com/photo-buy.php" title="编程词典个人版！" target="_blank">
+                                <img src="images/02.jpg" width="983" height="416" alt="您的开发专家！"/></a>
+                            <div>
+                                <div class="caption">
+                                    <p>
+                                        编程人员可以根据自己编程的不同要求快速查找，并作出相应标记，也可以对所查询内容进行快速复制使用。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="http://www.mrbccd.com/cpzx.php" title="无障碍学习 | 适合不同层次的编程人群（即学即练）！" target="_blank">
+                                <img src="images/03.jpg" width="983" height="416" alt="编程词典带您体验全新的编程盛宴！" /></a>
+                            <div>
+                                <div class="caption">
+                                    <p>
+                                        打造全方位、立体化学习模式。看、学、练和用容为一体</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="http://www.mrbccd.com/cpzx.php" title="内容全面、技术丰富！" target="_blank">
+                                <img src="images/04.jpg" width="983" height="416" alt="完美的升级服务！" /></a>
+                            <div>
+                                <div class="caption">
+                                    <p>
+                                        满足不同编程用户人群的需求。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="http://www.mrbccd.com/cpzx.php" title="全方位、多模式的售后服务 | 为读者保驾护航！" target="_blank">
+                                <img src="images/05.jpg" width="983" height="416" alt="全方位、多模式的售后服务！" /></a>
+                            <div>
+                                <div class="caption">
+                                    <p>
+                                        为编程者提供最有价值的内容和产品。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="paginationA">
+                        <li class=""><a href="#0">1</a></li>
+                        <li class=""><a href="#1">2</a></li>
+                        <li class=""><a href="#2">3</a></li>
+                        <li class=""><a href="#3">4</a></li>
+                        <li class="current"><a href="#4">5</a></li>
+                        <li class=""><a href="#5">6</a></li>
+                    </ul>
+                    <a href="#" class="prev">
+                        <img src="images/arrow-prev.png" width="24" height="43" alt="后退" /></a> 
+                     <a href="#" class="next">
+                        <img src="images/arrow-next.png" width="24" height="43" alt="前进" /></a>
+                </div>
+            </div>
+        </div>
+        <!--尾部开始 -->
+        <div id="footer">
+            <div id="yh">
+                <div class="yh01">
+                    <img src="images/yh_01.jpg" alt="" /></div>
+                <div class="yh02">
+                    <div class="yh02_text">
+                        <a href="http://www.mingrisoft.com/contact.php">联系我们</a> | <a href="http://www.mingrisoft.com/chengpin.php">
+                            工作机会</a> | <a href="http://www.mingrisoft.com/about-friends.php">合作伙伴 </a>|
+                        <a href="http://www.mingrisoft.com/about-jianjie.php">关于我们</a></div>
+                </div>
+                <div class="yh03">
+                    <img src="images/yh_03.jpg" alt="" /></div>
+            </div>
+            <div class="footer_d">
+                <div class="footer_d_center">
+                    <div class="footer_text">
+                        Copyright&copy;吉林省明日科技有限公司
+                        <script src='http://s139.cnzz.com/stat.php?id=844254&web_id=844254&show=pic2' language='JavaScript'
+                            charset='gb2312'></script>
+                        <br />
+                        <a href="index.php">网站主页 </a>| <a href="http://www.mingrisoft.com/new.php">友情链接
+                        </a>| <a href="http://www.mingrisoft.com/chengpin.php">诚聘英才</a> | <a href="http://www.mingrisoft.com/about-friends.php">
+                            合作伙伴</a> | <a href="http://www.mingrisoft.com/contact.php">联系我们 </a>
+                        <br />
+                        公司地址：吉林省长春市高新区锦河街155号电子信息楼三层301室 公司邮箱：<a href="mailto:mingrisoft@mingrisoft.com">mingrisoft@mingrisoft.com</a>
+                        电话：0431-81309315
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--尾部结束 -->
+    </div>
+</body>
+</html>

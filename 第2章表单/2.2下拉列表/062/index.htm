@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>遍历多选择下拉列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+.wenbenkuang {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+</style>
+</head>
+<body style="font-size:12px">
+<form name="form1" method="post" action="">
+  <table width="300" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#FFCC00">
+    <tr>
+      <td height="22" align="left" background="images/bg.gif" bgcolor="#FFFFFF">可以进行多项选择的下拉列表:</td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FFFFFF">
+      <select name="mcusep" size="4" multiple="multiple" class="wenbenkuang" onchange="updateorder()">
+        <option value="JavaScript程序设计">JavaScript程序设计</option>
+        <option value="JavaScript经典教程">JavaScript经典教程</option>
+        <option value="JavaScript范例宝典">JavaScript范例宝典</option>
+        <option value="JavaScript与CSS样式">JavaScript与CSS样式</option>
+        <option value="JavaScript与HTML">JavaScript与HTML</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td height="22" align="left" background="images/bg.gif" bgcolor="#FFFFFF">显示所选内容:</td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FFFFFF"><textarea name="textarea" cols="40" rows="6" class="wenbenkuang"></textarea></td>
+    </tr>
+  </table>
+</form>
+<script language="javascript">
+function updateorder()
+{
+  var orderstring="";  //声明的orderstring变量是写到textarea多行文本中的值；
+  var n=document.form1.mcusep.length;//mcusep是select标签的name值；
+  for (i = 0; i < n; ++i)//遍历所有的下拉列表中的选项值，将被选中的值，赋值给document.form1.textarea.value；
+  {
+      if (document.form1.mcusep.options[i].selected)//options[i]表示选中的这个对象；
+	{
+	  orderstring+=document.form1.mcusep.options[i].value+"\n";
+	}
+  }
+  document.form1.textarea.value=orderstring;
+}
+</script>
+</body>
+</html>

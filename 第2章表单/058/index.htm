@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>限制多行文本域输入的字符个数</title>
+    <script type="text/javascript">
+        var LastCount = 0;
+
+        //几个参数的意思：
+        //Message：textarea文本框对象；
+        //Total:最多允许输入的text文本框对象；
+        //Used:已经输入的文本框对象；
+        //Remain:剩余可以输入的text文本框对象；
+        function CountStrByte(Message, Total, Used, Remain) { //字节统计
+            var ByteCount = 0;
+            var StrValue = Message.value; //StrValue表示用户在textarea文本框中输入的文字值；
+            var StrLength = Message.value.length; //StrLength表示用户在文本框中输入的文字的字节长度；
+            var MaxValue = Total.value; //MaxValue最多允许输入的字节个数；
+
+            if (LastCount != StrLength) { // 在此判断，减少循环次数
+                for (i = 0; i < StrLength; i++) {
+
+                    //方法 charCodeAt() 与 charAt() 方法执行的操作相似，只不过前者返回的是位于指定位置的字符的 Unicode 编码,这个返回值是 0 - 65535 之间的整数。
+                    //而charAt() 方法返回的是指定位置的字符；
+                    ByteCount = (StrValue.charCodeAt(i) <= 256) ? ByteCount + 1 : ByteCount + 2;
+                    if (ByteCount > MaxValue) {
+                        Message.value = StrValue.substring(0, i);
+                        alert("评论内容最多不能超过 " + MaxValue + " 个字节！\n注意：一个汉字为两字节。");
+                        ByteCount = MaxValue;
+                        break;
+                    }
+                }
+                Used.value = ByteCount; //Used.value表示已经输入的字节数量；
+                Remain.value = MaxValue - ByteCount; //Remain.value表示剩余可以输入的字节数量；
+                LastCount = StrLength;
+            }
+        }
+    </script>
+</head>
+<body style="font-size:12px">
+<table width="787" height="724" border="0" align="center" cellpadding="0" cellspacing="0" background="bg.jpg">
+  <tr>
+    <td width="218" height="400">&nbsp;</td>
+    <td width="569" height="400">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="224">&nbsp;</td>
+    <td align="center" valign="middle" height="224"><table width="95%" border="0" cellspacing="0" cellpadding="0">
+      <form name="form1">
+        <tr>
+          <td width="23%" height="22" align="right" class="font2">评论人昵称：</td>
+          <td width="77%" height="22" align="left"><input name="评论人昵称" type="text" class="textbox" id="评论人昵称" /></td>
+        </tr>
+        <tr>
+          <td height="22" align="right" class="font2">评论内容：</td>
+          <td height="22" align="left"><textarea name="textareaName" cols="45" rows="5" id="textareaid"  onkeyup="CountStrByte(form1.textareaName,totalName,form1.usedName,form1.remainName);"></textarea>
+              <br />
+        最多允许
+        <input name="totalName" type="text" disabled="disabled" class="textbox" id="totalID"  value="100" size="3"/>
+        个字节 已用字节：
+        <input name="usedName" type="text" disabled="disabled" class="textbox" id="usedID"  value="0" size="3"/>
+        剩余字节：
+        <input name="remainName" type="text" disabled="disabled" class="textbox" id="remainID" value="100" size="3"/>
+          </td>
+        </tr>
+        <tr>
+          <td height="22">&nbsp;</td>
+          <td height="22" align="left"><input name="add" type="submit" class="button" id="add" value="提 交" />
+              <input name="Submit2" type="reset" class="button" value="重 置" />
+              </td>
+        </tr>
+      </form>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="100">&nbsp;</td>
+    <td height="100">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

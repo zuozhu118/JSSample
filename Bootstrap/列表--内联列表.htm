@@ -1,0 +1,53 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>内联列表</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+</head>
+<body>
+    <ul class="list-inline">
+        <li>W3cplus</li>
+        <li>Blog</li>
+        <li>CSS3</li>
+        <li>jQuery</li>
+        <li>PHP</li>
+    </ul>
+    <!--下面是代码任务部分-->
+    <ul class="list-unstyled">
+        <li>城市：</li>
+        <li>
+            <ul class="list-inline">
+                <li>北京</li>
+                <li>上海</li>
+                <li>武汉</li>
+                <li>长沙</li>
+                <li>广州</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>
+<!--
+
+列表--内联列表 
+也可以说内联列表就是为制作水平导航而生。
+
+Bootstrap像去点列表一样，通过添加类名“.list-inline”来实现内联列表，
+简单点说就是把垂直列表换成水平列表，而且去掉项目符号（编号），保持水平显示。
+
+源码查看bootstrap.css文件第584行~第593行
+
+.list-inline {
+padding-left: 0;
+margin-left: -5px;
+list-style: none;
+}
+.list-inline > li {
+display: inline-block;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+-->

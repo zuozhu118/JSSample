@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>不提交表单自动检测密码域是否相同</title>
+<style>
+.wenbenkuang {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+</style>
+</head>
+<body style="font-size:12px">
+<form name="form1" method="post" action="">
+  <table width="245" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#FFA861">
+    <tr>
+      <td height="27" colspan="2"><img src="images/bg.jpg" width="245" height="27"></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td width="64" height="26">用户名称:</td>
+      <td width="181" height="26"><input name="textfield" type="text" class="wenbenkuang" size="18"></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td height="26">密 码:</td>
+      <td height="26"><input name="pwd1" type="password" class="wenbenkuang" id="pwd1" size="18"/></td>
+    </tr>
+    <tr align="left" bgcolor="#FFFFFF">
+      <td height="26">确认密码:</td>
+      <td height="26"><input name="pwd2" type="password" class="wenbenkuang" id="pwd2" onblur="if(this.value!=this.form.pwd1.value) alert('您两次输入的密码不一致！');" size="18"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

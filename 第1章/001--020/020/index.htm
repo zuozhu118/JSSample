@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>移动的窗口</title>
+</head>
+
+<body>
+<img src="1.jpg" width="782" height="600">
+<script language="JavaScript">
+window.resizeTo(300,300)//设定窗口的宽是300，高是300；
+window.moveTo(0,0)
+inter=setInterval("go()", 100);//每隔1毫秒执行一次go()方法；
+var aa=0
+var bb=0
+var a=0
+var b=0
+function go() {
+    //alert(screen.availWidth);
+    //alert(screen.availHeight);
+	try{
+	if (aa==0) 
+	a=a+2;
+	if (a>screen.availWidth-300)
+	aa=1;
+	if (aa==1) 
+	a=a-2;
+	if (a==0) 
+	aa=0;
+	if (bb==0) 
+	b=b+2;
+	if (b>screen.availHeight-300) 
+	bb=1;
+	if (bb==1) 
+	b=b-2;
+	if (b==0) 
+	bb=0;
+	window.moveTo(a, b);
+	//alert("a的值是："+a+"     ，b的值是："+ b);
+	}
+	catch(e){}
+}
+</script>
+</body>
+</html>

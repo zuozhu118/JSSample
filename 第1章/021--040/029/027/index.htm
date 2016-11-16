@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>设置窗口大小和位置</title>
+</head>
+
+<body>
+<script language="javascript">
+var ss="";
+function place() {
+    var x = window.screen.width;
+    var y = window.screen.height;
+    //    alert("X的值是："+x);
+    var tex3 = document.getElementById("text3").value;
+//    tex3.replace("@x", "你好啊");
+    alert(tex3.replace("@x", "你好啊"));
+    ss="width="+document.form1.text1.value+",height="+document.form1.text2.value+",top="+document.form1.text3.value+",left="+document.form1.text4.value;
+	var newform=window.open("melody.htm","",ss);
+}
+</script>
+<form name="form1" method="post" action="">
+  <p>页面大小：</p>
+  <p>宽：
+    <input name="text1" type="text" id="text1" value="500" size="10"/> 
+    高：
+    <input name="text2" type="text" id="text2" value="400" size="10"/>       
+  </p>
+  <p>页面位置：</p>
+  <p>X：
+    <input name="text3" type="text" id="text3" value="@x" size="10"/>
+Y：
+<input name="text4" type="text" id="text4" value="@y" size="10"/>
+</p>
+  <p>
+    <input type="button" name="Submit" value="打开页面" onclick="place()"/>
+      </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>关闭IE主窗口时，不弹出询问对话框</title>
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+</head>
+<body onLoad="clockon(bgclock)">
+<table width="757" height="174" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="133" align="center" valign="top">
+<script src="JS/onclock.JS"></script>
+<table width="757" height="133" border="0" align="center" cellpadding="0" cellspacing="0" background="images/topbg.jpg">
+  <tr>
+    <td valign="top"><table width="99%" height="131" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="24%" height="109">&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+        <td width="17%"><a href="#" onClick="window.location.reload();">· 刷新页面</a>          <br>
+          <a href="#" onclick="window.opener=null;window.close();">· 关闭系统</a>
+		  <br>
+          · 修改密码</td>
+      </tr>
+      <tr>
+        <td align="center" class="word_Green">当前登录用户：<%=session.getAttribute("username")%></td>
+        <td width="10%">&nbsp;</td>
+        <td colspan="2"><table width="100%" height="19" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
+            <td width="12%">物资入库</td>
+            <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
+            <td width="12%">物资出库</td>
+            <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
+            <td width="12%">物资处理</td>
+            <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
+            <td width="12%">查询统计</td>
+            <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
+            <td width="12%">基础信息</td>
+            <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
+            <td width="12%">系统管理</td>
+            <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
+          </tr>
+        </table></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>	
+	</td>
+  </tr>
+  <tr>
+    <td>
+      <table width="100%" height="26" border="0" cellpadding="0" cellspacing="0" background="images/area_bg.jpg">
+        <tr>
+          <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
+          <td width="4%">&nbsp;</td>
+          <td width="70%" valign="bottom">当前位置：物资入库 &gt; 采购计划单 &gt;&gt;&gt;</td>
+        </tr>
+      </table>
+<table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+      <tr>
+        <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
+        <td valign="top">&nbsp;</td>
+        <td width="10" valign="top" background="images/right.jpg">&nbsp;</td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="55" valign="top" background="images/bottom.jpg"></td>
+  </tr>
+</table>
+</body>
+
+</html>

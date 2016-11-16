@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>数字时钟</title>
+</head>
+
+<body onLoad="clock();">
+<script language="javascript">
+function clock()
+{ 
+	date=new Date();
+	hour=date.getHours();
+	minu=date.getMinutes();
+	sec=date.getSeconds();
+	if(sec<10)
+		{sec="0"+sec;}
+	if(minu<10) 
+		{minu="0"+minu;}
+	if(hour<10) 
+		{hour="0"+hour;}
+	time=hour+":"+minu+":"+sec;
+	document.img1.src="images/Clock/c"+time.charAt(0)+".gif";
+	document.img2.src="images/Clock/c"+time.charAt(1)+".gif";
+	document.img3.src="images/Clock/c"+time.charAt(3)+".gif";
+	document.img4.src="images/Clock/c"+time.charAt(4)+".gif";
+	document.img5.src="images/Clock/c"+time.charAt(6)+".gif";
+	document.img6.src="images/Clock/c"+time.charAt(7)+".gif";
+	if(hour>12) 
+	{document.img7.src="images/Clock/cpm.gif";}
+	else 
+	{document.img7.src="images/Clock/cam.gif";}
+	setTimeout('clock()',1000); 
+}
+</script>
+<img name="img1" width="16" height="21"><img name="img2" width="16" height="21"><img src="images/Clock/colon.gif" width="9" height="21"><img name="img3" width="16" height="21"><img name="img4" width="16" height="21"><img src="images/Clock/colon.gif" width="9" height="21"><img name="img5" width="16" height="21" id="img5"><img name="img6" width="16" height="21" id="img6"><img src="images/Clock/cb.gif" width="16" height="21"><img name="img7" width="16" height="21" id="img7">
+</body>
+</html>

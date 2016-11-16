@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>验证字符串是否以指定字符开头</title>
+<link href="style.css" rel="stylesheet">
+</head>
+<script language="javascript">
+function check(myform){
+	var startStr=myform.startStr.value;
+	var inStr=myform.inStr.value;	
+	if(startStr==""){
+		alert("请输入字符串的起始字符！");
+		myform.startStr.focus();return;	
+	}
+	if(inStr==""){
+		alert("请输入要判断的字符串！");
+		myform.inStr.focus();return;	
+	}else{
+		if(checkOccur(startStr,inStr)){
+			alert("指定字符串是以[ "+startStr+" ]开头！");
+			return;
+		}else{
+			alert("指定字符串不是以[ "+startStr+" ]开头！");
+			return;
+		
+		}
+	}
+}
+</script>
+<script language="javascript">
+function checkOccur(startStr,inStr){
+	var Expression=eval("/^"+startStr+"/"); 	
+	var objExp=new RegExp(Expression);
+	return objExp.test(inStr);
+}
+</script>
+<body>
+<form action="" name="form1" method="post">
+<table width="461" height="216" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="513" background="images/bg.gif"><table width="340" height="182" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="29">&nbsp;</td>
+        <td >请输入字符串的起始字符：</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td valign="middle"><input name="startStr" type="text" id="startStr" value="" ></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td >请输入要判断的字符串：<br>
+          <br>
+          <input name="inStr" type="text" id="inStr" value="" size="40"></td>
+      </tr>
+      <tr>
+        <td width="50">&nbsp;</td>
+        <td width="319"><input name="Submit" type="button" class="btn_grey" onClick="check(form1);" value="判断">
+          &nbsp;
+          <input name="Submit2" type="button" class="btn_grey" onClick="window.location.reload()" value="刷新"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

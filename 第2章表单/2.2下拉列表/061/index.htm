@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>获取下拉列表/菜单的值</title>
+<script type="text/javascript">
+function Mycheck(){
+  var val1,val2,val3;
+  val1=document.form1.address.value;//adress,class1,huxing是select标签的name值；
+  val2=document.form1.class1.value;
+  val3=document.form1.huxing.value;
+  alert("获取下拉列表值:\n地段:"+val1+"\n房源类别:"+val2+"\n房源户型:"+val3);
+}
+</script>
+</head>
+<body style="font-size:12px">
+<table width="788" height="360" border="0" align="center" cellpadding="0" cellspacing="0" background="bg.jpg">
+  <tr>
+    <td width="228" height="124">&nbsp;</td>
+    <td width="560">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td align="left" valign="bottom">
+	<form name="form1" onSubmit="Mycheck()">
+      <table width="560" height="142" border="0" cellpadding="-2" cellspacing="-2">
+        <tr>
+          <td width="14" height="26"><img src="light.gif" width="11" height="13"></td>
+          <td width="62"><font color="#000000" class="black">地&nbsp;&nbsp;&nbsp;&nbsp;段</font></td>
+          <td colspan="3">
+            <select name="address" size="1" class="font1">
+              <option>/*****/</option>
+              <option value="朝阳区">朝阳区</option>
+              <option value="绿园区">绿园区</option>
+              <option value="二道区">二道区</option>
+              <option value="宽城区">宽城区</option>
+              
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td height="26"><img src="light.gif" width="11" height="13"></td>
+          <td height="26"><span class="black">房源类别</span></td>
+          <td colspan="3">
+            <select name="class1" size="1" class="font1">
+              <option>/*****/</option>
+              <option value="高层">高层</option>
+              <option value="别墅">别墅</option>
+              
+            </select>            </td>
+        </tr>
+        <tr>
+          <td height="26"><img src="light.gif" width="11" height="13"></td>
+          <td height="26"><font color="#000000" class="black">房源户型</font></td>
+          <td colspan="3">
+            <select name="huxing" size="2" class="font1">
+              <option value="二室一厅">二室一厅</option>
+              <option value="三室二厅">三室二厅</option>
+            </select>            </td>
+        </tr>
+        <tr>
+          <td height="26" class="black"><img src="light.gif" width="11" height="13"></td>
+          <td height="26" class="black">小区名称</td>
+          <td colspan="3"><input name="build_name" type="text" id="build_name" style="background-color:#FFFFFF "></td>
+        </tr>
+        <tr>
+          <td height="26" class="black"></td>
+          <td height="26" class="black">使用面积</td>
+          <td colspan="3"><input name="area" type="text" id="area" style="background-color:#FFFFFF ">
+              <span class="black">(平方米)</span></td>
+        </tr>
+        <tr>
+          <td height="26" colspan="2">&nbsp;</td>
+          <td width="232" height="26"><br>
+              <input type="submit" name="Submit" value="添加">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" name="Submit2" value="重填"></td>
+          <td width="252" colspan="2"><br>
+              <span class="redfont">（有图标<img src="light.gif" width="11" height="13">处是必添项）</span></td>
+        </tr>
+      </table>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

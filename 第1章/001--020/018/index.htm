@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>下降式浏览器</title>
+
+<style type="text/css">
+<!--
+body {
+	background-image: url();
+}
+-->
+</style></head>
+
+<body onLoad="drop()">
+<img src="1.jpg" width="800" height="845">
+<script>
+function drop() {
+    var heig=window.screen.availHeight;
+	if(self.moveBy){
+		self.moveBy (0,-heig);
+		for(i = Math.floor(heig/3); i > 0; i--){
+			self.moveBy(0,3);
+		}
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>计步器</title>
+
+<style TYPE="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+<body>
+<script language="javascript">
+function getdateq()
+{
+	var now = new Date();
+	form1.hideform.value = now.getTime();
+	getdate();
+}
+function getdate()
+{
+	var now = new Date();
+	var se = Math.floor(now.getTime()/1000) - Math.floor(form1.hideform.value/1000);
+	var mse = now.getTime() - form1.hideform.value;
+	form1.se.value = se;
+	form1.mse.value = mse % 1000;
+	time = window.setTimeout('getdate()',1);
+}
+
+function sstop()
+{
+	window.clearTimeout(time);
+}
+
+</script>
+<form NAME="form1" METHOD="post" ACTION="">
+<center>
+  <table width="422" height="46" border="0" background="计步器.jpg">
+    <tr>
+      <td width="416" height="42">
+         &nbsp;
+         <input name="se" type="text" id="se" size="10">
+        <span class="style1">秒</span>        <input name="mse" type="text" id="mse" size="10">
+        <span class="style1">毫秒</span>        <input type="BUTTON" name="Submit" value="开始" onClick="getdateq()">
+        &nbsp;
+        <input type="BUTTON" name="Submit2" value="停止" onClick="sstop()">
+        <input name="hideform" type="hidden" id="hideform"></td>
+    </tr>
+  </table>
+  </center>  
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>图片置顶显示</title>
+</head>
+
+<body>
+<div id=Tdiv style="HEIGHT: 45px; LEFT: 0px; POSITION: absolute; TOP: 0px; WIDTH: 45px; Z-INDEX: 25">
+<input name="image1" type="image" id="image1" src="mrsoft.jpg" width="52" height="249" border="0"/>
+    
+</div>
+<!--    <table border="1" cellpadding="10" cellspacing="0">
+       <tr>
+		<td>独立边框</td>
+		<td>独立边框</td>
+		<td>独立边框</td>
+	</tr>
+	<tr>
+		<td>独立边框</td>
+		<td>独立边框</td>
+		<td>独立边框</td>
+	</tr>
+    </table>-->
+<script language="JavaScript">
+var ImgW=parseInt(image1.width);
+function permute(tfloor,Top,left){
+   var RealTop=parseInt(document.body.scrollTop);
+   buyTop=Top+RealTop;
+   document.all[tfloor].style.top=buyTop;
+   var buyLeft=parseInt(document.body.scrollLeft)+parseInt(document.body.clientWidth)-ImgW;
+   document.all[tfloor].style.left=buyLeft-left;
+}
+setInterval('permute("Tdiv",2,2)',1);
+</script>
+<center>
+<img src="gougo.jpg">
+</center>
+</body>
+</html>

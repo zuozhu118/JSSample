@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>页面上下打开效果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body>
+<center><img src="1.jpg" width="782" height="600"></center>
+<div id="div1" style="position:absolute; left:0px; top:0px; background-color:#0066FF; border:'0.1px' 'solid' '#0066FF' "></div>
+<div id="div2" style="position:absolute; left:0px; top:0px; background-color:#0066FF; border:'0.1px' 'solid' '#0066FF' "></div>
+<script language="JavaScript"> 
+var speed=20 
+var temp=new Array() 
+var Height=document.body.clientHeight/2,Top=0 
+for (i=1;i<=2;i++){ 
+	temp[i]=eval("document.all.div"+i+".style") 
+	temp[i].width=document.body.clientWidth 
+	temp[i].height=document.body.clientHeight/2 
+	temp[i].top=(i-1)*parseInt(temp[i].height) 
+} 
+function openit(){ 
+	window.scrollTo(0,0) 
+	Height-=speed 
+	temp[1].clip="rect(0 auto+"+Height+" 0)" 
+	Top+=speed 
+	temp[2].clip="rect("+Top+" auto auto)" 
+	if (Height<=0) 
+	clearInterval(tim) 
+} 
+var tim=setInterval("openit()",100); 
+</script>
+</body>
+</html>

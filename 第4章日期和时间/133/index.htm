@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>位于页面顶层的时钟</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+</head>
+<body>
+<div id="div2" style="position:absolute "></div> 
+<div id="div1" style="position:absolute "></div> 
+<p>
+<script language="javascript">                    
+function shotime()
+{
+var now = new Date();
+hour = now.getHours();
+minute = now.getMinutes();
+second = now.getSeconds();
+if (minute<10){minute='0'+minute}
+if (second<10){second='0'+second}
+str = hour+":"+minute+":"+second;
+str='<b><font style="font-size:50px ">'+str+'</font></b>'
+div1.style.top="50px";
+div1.style.fontFamily="verdana";
+div1.style.color="#FF0000";
+div1.style.left="500px";
+div1.innerHTML=str;
+div2.style.top="50px";
+div2.style.color="#999999";
+div2.style.fontFamily="verdana";
+div2.style.left="502px";
+div2.innerHTML=str;
+window.setTimeout("shotime();",1000);
+}
+shotime();
+</script>
+<table width="784" height="603" border="0" align="center" cellpadding="0" cellspacing="0" background="images/libraryManage.jpg">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

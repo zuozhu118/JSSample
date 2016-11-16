@@ -1,0 +1,38 @@
+﻿<!--百度地图秘钥： 5cqW9gRejdYjxQkfkyuwEqyq-->
+<!--114.3, 30.57-->
+<!--style="height:400px;width:400px;margin:0 auto;"-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5cqW9gRejdYjxQkfkyuwEqyq"></script>
+	<title>根据城市名设置地图中心点</title>
+</head>
+<body>
+	<div id="allmap" style="height:400px;width:400px;margin:0 auto;"></div>
+</body>
+</html>
+<script type="text/javascript">
+    //=======根据城市名设置地图中心点
+    var map = new BMap.Map("allmap");  // 创建Map实例
+    map.centerAndZoom("武汉");      // 初始化地图,用城市名设置地图中心点
+    //map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+    //========创建点：
+    //var point1 = new BMap.Point(114.3, 30.57);//根据坐标创建点位置；
+    //var marker = new BMap.Marker(point1);  // 创建点对象；
+    var point2 = new BMap.Point(114.27, 30.55);//114.32, 30.35
+    var marker = new BMap.Marker(point2);
+    map.addOverlay(marker); // 将点添加到地图中
+
+
+    //=======添加文字标注：
+    var label = new BMap.Label("喻天租车门店", { offset: new BMap.Size(20, -10) });
+    marker.setLabel(label);
+</script>

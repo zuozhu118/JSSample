@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>各地时间表</title>
+<style TYPE="text/css">
+.style1 {color: #FFFFFF}
+.style2 {
+	color: #FF0000;
+	font-weight: bold;
+}
+</style>
+</head>
+
+<script language="JavaScript">
+var timerRunning = false;
+var zonetime = "格林威治标准时间：";
+var adjust = 0;
+
+function timeCheck(tzone, diff)
+{
+	if (timerRunning) 
+	{
+		clearTimeout(updatetime);
+		timerRunning = false; 
+	}
+	gmtOffset = eval(diff+adjust);
+	zonetime = tzone;
+	checkDateTime();
+}
+
+function checkDateTime () 
+{
+	var now = new Date();
+	var years = now.getYear();
+	var month = now.getMonth()+1;
+	var date = now.getDate();
+	var day = now.getDay();
+	var hour = now.getHours();
+	var minute = now.getMinutes();
+	var second = now.getSeconds();
+	var lastSat = date - (day+1);
+	while (lastSat < 32) lastSat+=7;
+	if (lastSat > 31) 
+		lastSat+=-7;
+	var firstSat = date - (day+1);
+	while (firstSat > 0) firstSat+=-7;
+	if (firstSat < 1) 
+		firstSat+=7;
+	if ((((month == 4) && (date >= firstSat)) || month > 4) && (month < 11 || ((month == 10) && day <= lastSat))) 
+		adjust += 60;
+	yourOffset = (new Date()).getTimezoneOffset();
+	yourOffset = yourOffset + adjust;
+	var xx = navigator.appName
+	var xy = navigator.appVersion;
+	xy = xy.substring(0,1);
+	if ((xy == 4) && (xx == "Netscape")) 
+		yourOffset = yourOffset+adjust;
+	if ((((month == 4) && (date > 20)) || month > 4) && (month < 11 || ((month == 10) && day < 30))) adjust -= 60;
+		ourDifference = eval(gmtOffset - yourOffset);
+	var half = eval(ourDifference % 60);
+	ourDifference = Math.round(ourDifference / 60);
+	hour = eval(hour - ourDifference);
+	var m = new Array("","1","2","3","4","5","6","7","8","9","10","11","12");
+	var leap = eval(years % 4);
+
+	if ((half == -30) || (half == 30)) 
+		minute += 30;
+	if (minute > 59) 
+		minute -= 60, hour++;
+	if (minute < 0) 
+		minute += 60, hour--;
+	if (hour > 23) 
+		hour -= 24, date += 1;
+	if (((month == 4) || (month == 6) || (month == 9) || (month == 11)) && (date==31)) 
+		date = 1, month ++;
+	if (((month == 2) && (date > 28)) && (leap != 0)) 
+		date = 1, month ++;
+	if ((month == 2) && (date > 29)) 
+		date = 1, month++;
+	if (hour < 0) 
+		hour += 24, date --;
+	if ((date == 32) && (month == 12))
+		 month = m[1], date = 1, years++;
+	if (date == 32) 
+		date = 1, month++;
+	if ((date < 1) && (month == 1)) 
+		month= m[12], date = 31, years--;
+	if (date < 1) 
+		date = 31, month --;
+	if (((month == 4) || (month == 6) || (month== 9) || (month == 11)) && (date == 31)) 
+		date = 30;
+	if ((month == 2) && (date > 28)) 
+		date = 29;
+	if (((month == 2) && (date > 28)) && (leap != 0)) 
+		date=28;
+	for (i=1; i<13; i++)
+	{
+		if (month == i) 
+		{
+			month = m[i]; break;
+		}
+	}
+
+	var dateTime = hour;
+	dateTime = ((dateTime < 10) ? "0":"") + dateTime;
+	dateTime += ((minute < 10) ? ":0" : ":") + minute;
+	dateTime += ((second < 10) ? ":0" : ":") + second;
+	//dateTime += " "+year + "年" + month + "月" + date + "日" ;
+	zone.value = zonetime;
+	localtime.value = years + "/" + month + "/" + date +" "+dateTime;
+	updatetime=setTimeout("checkDateTime()", 1000);
+	timerRunning = true;
+}
+</script>
+
+<body OnLoad = "timeCheck(zonetime, 0)">
+<p>&nbsp;
+</p>
+<table WIDTH="359" HEIGHT="182" BORDER="1" ALIGN="CENTER" BORDERCOLOR="#006500">
+  <tr>
+    <td COLSPAN="3" ALIGN="CENTER" VALIGN="MIDDLE" background="Images/map.gif"><table WIDTH="265" BORDER="0" ALIGN="CENTER" BORDERCOLOR="#FFFF00">
+      <tr ALIGN="RIGHT">
+        <td COLSPAN="2">
+          <table WIDTH="100%" BORDER="0">
+            <tr>
+              <td COLSPAN="4" ALIGN="RIGHT" CLASS="style1 style6"><span class="style2">地　　区：</span></td>
+              <td WIDTH="165" ALIGN="LEFT" CLASS="style4"><input NAME="zone" TYPE="TEXT" VALUE="" SIZE="18"></td>
+            </tr>
+        </table>
+		</td>
+      </tr>
+      <tr ALIGN="RIGHT">
+        <td WIDTH="88" HEIGHT="19" CLASS="style1"><span class="style2">当地时间：</span></td>
+        <td WIDTH="167" ALIGN="LEFT"><input NAME="localtime" TYPE="TEXT" VALUE="" SIZE="18"></td>
+      </tr>
+      <tr ALIGN="CENTER">
+        <td COLSPAN="2"><table WIDTH="194" HEIGHT="75" BORDER="1" CELLPADDING="4" CELLSPACING="3" BORDERCOLOR="#FFFF00">
+            <tr>
+              <td WIDTH="55" ALIGN="CENTER"><input TYPE="BUTTON" NAME="bjbutton" VALUE="北京" onClick="timeCheck(this.value, -500)"></td>
+              <td WIDTH="55" ALIGN="CENTER"><input TYPE="BUTTON" NAME="djbutton" VALUE="东京" onClick="timeCheck(this.value, -540)"></td>
+              <td WIDTH="136" ALIGN="CENTER"><input TYPE="BUTTON" NAME="ldbutton" VALUE="伦敦" onClick="timeCheck(this.value, +0)"></td>
+            </tr>
+            <tr>
+              <td><input TYPE="BUTTON" NAME="mxgbutton" VALUE="墨西哥" onClick="timeCheck(this.value, +360)"></td>
+              <td><input TYPE="BUTTON" NAME="tpybutton" VALUE="太平洋" onClick="timeCheck(this.value, +480)"></td>
+              <td><input TYPE="BUTTON" NAME="xwybutton" VALUE="夏威夷" onClick="timeCheck(this.value, +600)"></td>
+            </tr>
+        </table>
+		</td>
+      </tr>
+    </table>
+	</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div ALIGN="CENTER"></div>
+<p>&nbsp;  </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

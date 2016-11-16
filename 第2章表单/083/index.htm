@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>可以提交到不同处理页的表单</title>
+    <style>
+        .wenbenkuang
+        {
+            font-family: "宋体";
+            font-size: 9pt;
+            color: #333333;
+            border: 1px solid #999999;
+        }
+        .table
+        {
+            border: #000000 solid 1px;
+        }
+    </style>
+    <script type="text/javascript">
+        function Mycheck() {
+            var txt = document.form1.txt_action.value;
+            document.form1.action = txt;
+            document.form1.submit();
+        }
+    </script>
+</head>
+<body style="font-size: 12px">
+    <form name="form1">
+    <table width="300" border="0" align="center" cellpadding="1" cellspacing="0" class="table">
+        <tr>
+            <td height="37" colspan="2" background="images/bg.jpg">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户资料填写
+            </td>
+        </tr>
+        <tr>
+            <td width="151" height="22" align="right">
+                真实姓名:
+            </td>
+            <td width="389" height="22" align="left">
+                &nbsp;
+                <input name="textfield" type="text" class="wenbenkuang">
+            </td>
+        </tr>
+        <tr>
+            <td height="22" align="right">
+                所在地区:
+            </td>
+            <td height="22" align="left">
+                &nbsp;
+                <select name="select">
+                    <option>北京市</option>
+                    <option>辽宁省</option>
+                    <option>吉林省</option>
+                    <option>广东省</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td height="22" align="right">
+                提交页面:
+            </td>
+            <td height="22" align="left">
+                &nbsp;
+                <input name="txt_action" type="text" class="wenbenkuang" id="txt_action">
+                (请事先创建提交页面,否则将显示错误信息)
+            </td>
+        </tr>
+        <tr>
+            <td height="22" align="right">
+                &nbsp;
+            </td>
+            <td height="22" align="left">
+                <input type="button" name="Submit" value="确定" onclick="Mycheck();">
+                &nbsp;&nbsp;&nbsp;
+                <input type="reset" name="Submit2" value="重置">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

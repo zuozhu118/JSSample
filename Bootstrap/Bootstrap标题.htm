@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题（一）</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> <!--此路径指向的就是bootstrap.css这个文件-->
+</head>
+
+<body>
+<!--Bootstrap中的标题-->
+<h1>Bootstrap标题一</h1>
+<h2>Bootstrap标题二</h2>
+<h3>Bootstrap标题三</h3>
+<h4>Bootstrap标题四</h4>
+<h5>Bootstrap标题五</h5>
+<h6>Bootstrap标题六</h6>
+
+<!--Bootstrap中让非标题元素和标题使用相同的样式-->
+<div class="h1">Bootstrap标题一</div>
+<div class="h2">Bootstrap标题二</div>
+<div class="h3">Bootstrap标题三</div>
+<div class="h4">Bootstrap标题四</div>
+<div class="h5">Bootstrap标题五</div>
+<div class="h6">Bootstrap标题六</div>
+
+<!--任务填写下方-->
+
+    
+</body>
+</html>
+<!--
+
+通过比较可以发现，Bootstrap标题样式进行了以下显著的优化重置：
+
+1、重新设置了margin-top和margin-bottom的值，  h1~h3重置后的值都是20px；h4~h6重置后的值都是10px。
+2、所有标题的行高都是1.1（也就是font-size的1.1倍）,而且文本颜色和字体都继承父元素的颜色和字体。
+3、固定不同级别标题字体大小，h1=36px，h2=30px，h3=24px，h4=18px，h5=14px和h6=12px。
+
+标题的具体运用非常简单，和我们平时运用是一样的，使用<h1>~<h6>标签，分别表示标题一至标题六，h 后面的数字越大，表示级别越小，文本也越小。来看一个简单的效果：右侧代码编辑器中的10-16行的代码。
+
+在Bootstrap中为了让非标题元素和标题使用相同的样式，还特意定义了.h1~.h6六个类名。如右侧代码编辑器中   18-23行代码所示：
+
+对比两个示例的效果图，可以说他们的效果是一模一样的。
+
+
+-->

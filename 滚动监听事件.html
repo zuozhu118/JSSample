@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>滚动监听事件</title>
+    <script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+    <style type="text/css">
+        #scrolldiv
+        {
+            border: 1px solid red;
+            width: 200px;
+            margin: auto;
+            height: 1200px;
+            position: absolute;
+            top: 100px;
+            overflow: scroll;
+        }
+    </style>
+    <script type="text/javascript">
+        //摘要
+        //JQuery监听页面滚动总结
+
+        //1、当前滚动的地方的窗口顶端到整个页面顶端的距离：
+
+        //var winPos = $(window).scrollTop();
+
+        //2、获取指定元素的页面位置：
+
+        //$(val).offset().top;
+
+        //3、窗体的滚动监听事件；
+
+        //$(window).scroll(function(event){
+
+        //});
+
+        //4、设置滚动条到指定位置。$(window).scrollTop(offset)。
+
+        $(function () {
+            var divscrolloffset = $('#scrolldiv').offset().top;//获取scrolldiv距离页面顶部的位置，这个值是不会随着滚动而改变的；
+            //alert("scrolldiv距离窗体顶部的距离：" + divscrolloffset);
+
+            $(window).scroll(function () {
+                var windowscrolltop = $(window).scrollTop();//获取窗体的滚动距离；
+                alert(windowscrolltop+"窗体的滚动距离");
+                //如果窗体的滚动条滚动到scrolldiv处，就弹框；
+                var length = windowscrolltop - divscrolloffset;
+                if (length>=0) {
+                    alert("窗体滚动到啦scrolldiv位置啦");
+                }
+            });//窗体的滚动监听事件；
+
+
+            $('#scrolldiv').scroll(function () {
+                var divscrolltop = $('#scrolldiv').scrollTop();//获取scrolldiv中的内容距离scrolldiv顶部的滚动距离；
+
+                //alert('scrolldiv中的内容开始滚动啦');
+                alert("scrolldiv中内容的滚动距离，" + divscrolltop);
+            });//scrolldiv这个div的滚动监听事件；
+        });
+
+
+
+        //$(window.document).scroll(function () {
+        //    var scrolltop = $(document).scrollTop();
+        //    //alert(scrolltop);
+        //    if (scrolltop > 1000) {
+        //        alert(scrolltop);
+        //        //alert("滚动啦");
+        //    }
+        //});
+    </script>
+</head>
+<body>
+    <div id="scrolldiv">
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+        <p>测试的文字</p>
+    </div>
+
+</body>
+</html>
+
+
+

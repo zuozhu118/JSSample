@@ -1,0 +1,55 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>紧凑型表格</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+ <table class="table">
+   <thead>
+     <tr>
+       <th>表格标题</th>
+       <th>表格标题</th>
+       <th>表格标题</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+     <tr>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+       <td>表格单元格</td>
+     </tr>
+   </tbody>
+ </table>
+</body>
+</html>
+<!--
+何谓紧凑型表格，简单理解，就是单元格没内距或者内距较其他表格的内距更小。换句话说，要实现紧凑型表格只需要重置表格单元格的内距padding的值。那么在Bootstrap中，通过类名“table-condensed”重置了单元格内距值。
+紧凑型表格的运用，也只是需要在<table class="table">基础上添加类名“table-condensed”：
+
+<table class="table table-condensed">
+…
+</table>
+-->
+<!--
+另外从上面的示例中大家可能也发现了，不管制作哪种表格都离不开类名“table”,
+所以大家在使用Bootstrap表格时，千万注意，你的<table>元素中一定不能缺少类名“table”。
+
+-->

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+</head>
+
+<body>
+<table id="table1" border=5> 
+<tr><td align=center><strong>明日科技</strong></td>
+</tr> 
+<tr><td align=center>
+<pre>明日科技图书</pre>
+</table>
+<script language="javascript">
+var i=0;
+var Color= new Array("#0000FF","#99FF00","#660033","#CC66CC","#FFFF33","red","orange");
+function pp(){
+    if (i > Color.length - 1) { i = 0 }	
+	table1.style.backgroundColor=Color[i];//在JS中用style属性来动态改变样式；
+	i=i+1;
+	setTimeout("pp()",1000);//每隔1000毫秒，调用一次pp()方法；
+}
+pp();
+</script>
+</body>
+</html>

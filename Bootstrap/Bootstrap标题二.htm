@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题（二）</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<!--Bootstrap中使用了<small>标签来制作副标题-->
+<h1>Bootstrap标题一<small>我是副标题</small></h1>
+<h2>Bootstrap标题二<small>我是副标题</small></h2>
+<h3>Bootstrap标题三<small>我是副标题</small></h3>
+<h4>Bootstrap标题四<small>我是副标题</small></h4>
+<h5>Bootstrap标题五<small>我是副标题</small></h5>
+<h6>Bootstrap标题六<small>我是副标题</small></h6>
+
+<!--任务填写处-->
+
+孤儿院无私奉献30年  一曲人性的赞歌
+</body>
+</html>
+
+<!--
+
+
+除此之外，我们在Web的制作中，常常会碰到在一个标题后面紧跟着一行小的副标题。在Bootstrap中他也考虑了这种排版效果，使用了<small>标签来制作副标题。这个副标题具有其自己的一些独特样式：
+
+1、行高都是1，而且font-weight设置了normal变成了常规效果（不加粗），同时颜色被设置为灰色（#999）。
+2、由于<small>内的文本字体在h1~h3内，其大小都设置为当前字号的65%；而在h4~h6内的字号都设置为当前字号的75%；
+详细代码请参阅bootstrap.css文件中第407行~第443行。
+
+h1 small,
+.h1 small,
+h2 small,
+.h2 small,
+h3 small,
+.h3 small,
+h1 .small,
+.h1 .small,
+h2 .small,
+.h2 .small,
+h3 .small,
+.h3 .small {
+  font-size: 65%;
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4 small,
+.h4 small,
+h5 small,
+.h5 small,
+h6 small,
+.h6 small,
+h4 .small,
+.h4 .small,
+h5 .small,
+.h5 .small,
+h6 .small,
+.h6 .small {
+  font-size: 75%;
+}
+
+来简单看其使用方法与最终效果：如右侧代码编辑器中12-17行代码所示。
+
+-->

@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>页面缩小</title>
+</head>
+
+<body>
+<center><img src="1.jpg" width="782" height="600"></center>
+<div id="div1" style="position:absolute;top:0;left:0;background-color:#6699FF; "></div>
+<script language="JavaScript">
+var speed=5;
+var reference=document.body.clientWidth/document.body.clientHeight;
+var rightclip,leftclip,topclip,bottomclip;
+var temp=document.all.div1.style;
+topclip=leftclip=0;
+rightclip=temp.width=document.body.clientWidth;
+bottomclip=temp.height=document.body.clientHeight;
+function doit(){
+	if (leftclip>document.body.clientWidth/2)
+		clearInterval(tim);
+	temp.clip="rect( "+topclip+" "+rightclip+" "+bottomclip+" "+leftclip+")";
+	leftclip+=reference*speed;
+	topclip+=speed;
+	rightclip-=reference*speed;
+	bottomclip-=speed;
+}
+tim=setInterval("doit()",100);
+</script>
+</body>
+</html>

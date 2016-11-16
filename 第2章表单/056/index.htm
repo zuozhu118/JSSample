@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>自动计算金额</title>
+<script type="text/javascript">
+function count(){
+  var amount,price,money;
+  amount=document.form1.txt_year.value;
+  price=document.form1.txt_by.value;
+  money=amount*price;
+  document.form1.txt_bail.value=money;
+}
+</script>
+</head>
+<body style="font-size:12px">
+<table width="785" height="508" border="0" align="center" cellpadding="0" cellspacing="0" background="bg.jpg">
+  <tr>
+    <td width="193" height="175">&nbsp;</td>
+    <td width="592" height="175">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="202">&nbsp;</td>
+    <td align="center" valign="middle" height="202"><table width="90%"  border="0" cellspacing="1" cellpadding="1">
+      <form name="form1">
+        <tr>
+          <td height="22" colspan="2" align="center">加盟商信息</td>
+        </tr>
+        <tr>
+          <td width="150" height="22" align="right">签订金额:</td>
+          <td height="22" align="left"><input name="txt_money" type="text" id="txt_money2"></td>
+        </tr>
+        <tr>
+          <td height="22" align="right">签订日期:</td>
+          <td height="22" align="left"><input name="txt_date" type="text" id="txt_date"></td>
+        </tr>
+        <tr>
+          <td height="22" align="right">合同年限:</td>
+          <td height="22" align="left"><input name="txt_year" type="text" id="txt_year" size="10" onBlur="count()">
+        年
+          <input name="txt_by" type="hidden" id="txt_by" value="2000"></td>
+        </tr>
+        <tr>
+          <td height="22" align="right">保证金:</td>
+          <td height="22" align="left"><input name="txt_bail" type="text" id="txt_bail" readonly="true"></td>
+        </tr>
+        <tr>
+          <td width="150" height="32" align="right">&nbsp;</td>
+          <td height="22" align="left"><input type="submit" name="Submit3" value="  签订合同  ">
+              
+&nbsp;&nbsp;
+        <input type="reset" name="Submit4" value="  重置内容  "></td>
+        </tr>
+      </form>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="131">&nbsp;</td>
+    <td height="131">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

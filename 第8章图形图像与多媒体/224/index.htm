@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>鼠标移动放大图片</title>
+</head>
+
+<body>
+<input NAME="images1" TYPE="image" ID="images1" SRC="00.jpg" ALIGN="MIDDLE" BORDER="0"  onMouseMove="move()" onMouseOut="out()">
+<script language="javascript">
+var w=images1.width;
+var h=images1.height;
+images1.height = Math.floor(h*0.4);
+images1.width = Math.floor(w*0.4);            
+function move()
+{
+	images1.height = h;
+	images1.width = w;
+}
+function out()
+{
+	images1.height = Math.floor(h*0.4);
+	images1.width = Math.floor(w*0.4);
+}
+</script>         
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>分时问候</title>
+</head>
+<body onLoad="ShowTime();">
+</body>
+</html>
+<script language="javascript">
+function ShowTime()
+{
+	var temp = "";
+	var datetime = new Date();
+	var hour = datetime.getHours();
+	var minu = datetime.getMinutes();
+	var seco = datetime.getSeconds();
+	temp = temp+" "+hour+":"+minu+":"+seco+" ";
+	if(hour < 10)
+	{
+		hour = "0" + hour;
+	}
+	if(minu < 10)
+	{
+		minu = "0" + minu;
+	}
+	if(seco < 10)
+	{
+		seco = "0" + seco;
+	}
+	if(hour >= 0 && hour < 5)
+	{
+		temp = temp + "凌晨好";
+	}
+	if(hour >= 5  && hour < 8)
+	{
+	temp = temp + "早上好";
+	}
+	if(hour >= 8  && hour < 11)
+	{
+		temp = temp + "上午好";
+	}
+	if(hour >= 11  && hour < 13)
+	{
+		temp = temp + "中午好";
+	}
+	if(hour >= 13  && hour < 17)
+	{
+		temp = temp + "下午好";
+	}
+	if(hour >= 17  && hour < 24)
+	{
+		temp = temp + "晚上好";
+	}
+	window.setTimeout(temp,1000);
+	document.write("<font color = #CC00FF>"+temp+"</font>");
+}
+</script>

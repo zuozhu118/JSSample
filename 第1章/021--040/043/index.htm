@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>应用JavaScript实现指定尺寸无边框无滚动条窗口</title>
+</head>
+
+<body>
+<table width="871" height="339" border="0" align="center" cellpadding="-2" cellspacing="-2"
+ background="Images/top/bg.GIF" class="tableBorder">
+  <tr>
+    <td valign="top"><table width="100%" height="26"  border="0" cellpadding="-2" cellspacing="-2">
+      <tr>
+        <td><div align="right" style="color:#FFFFFF ">
+		设为首页| 收藏本站|&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+      </tr>
+    </table>
+      <table width="100%" height="119" border="0" cellpadding="-2" cellspacing="-2">
+	  <script language="javascript">
+	  //鼠标移动效果
+	  var A_Img=new Image();
+	  function move(image,num){
+	  	image.src='Images/top/menu_0'+num+'_over.gif';
+	  }
+	  function out(image,num){
+		image.src='Images/top/menu_0'+num+'.gif';
+	  }	  
+	  </script>
+        <tr>
+          <td width="183"><table width="100%" height="119"  border="0" cellpadding="-2" cellspacing="-2">
+            <tr height="28">
+              <td height="29"></td>
+            </tr>
+            <tr>
+              <td height="90" background="Images/logo_bg.gif"><div align="center">
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="162" height="89">
+                  <param name="movie" value="Flash/logo.swf">
+                  <param name="quality" value="high">
+                  <param name="wmode" value="transparent">
+                  <embed src="Flash/logo.swf" width="162" height="89" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
+                </object>
+              </div></td>
+            </tr>
+          </table></td>
+          <td width="95" align="center"><a href="index.asp"><img src="Images/top/menu_01.gif" id="image1" width="95" height="119" border="0" onMouseMove="move(this,'1')" onMouseout="out(this,'1')"></a></td>
+          <td width="95" align="center"><a href="index.asp"><img src="Images/top/menu_02.gif" id="image2" width="95" height="119" border="0" onMouseMove="move(this,'2')" onMouseout="out(this,'2')"></a></td>
+          <td width="94" align="center"><a href="produce_zs.asp"><img src="Images/top/menu_03.gif" name="image3"  width="95" height="119" border="0" onMouseMove="move(this,'3')" onMouseout="out(this,'3')"></a></td>
+          <td width="94" align="center"><a href="honour.asp"><img src="Images/top/menu_04.gif" name="image4" width="94" height="119" border="0" onMouseMove="move(this,'4')" onMouseout="out(this,'4')"></a></td>
+          <td width="94" align="center"><a href="service.asp"><img src="Images/top/menu_05.gif" name="image5" width="95" height="119" border="0" onMouseMove="move(this,'5')" onMouseout="out(this,'5')"></a></td>
+          <td width="94" align="center"><a href="instructor.asp"><img src="Images/top/menu_06.gif" name="image6" width="94" height="119" border="0" onMouseMove="move(this,'6')" onMouseout="out(this,'6')"></a></td>
+          <td width="95" align="center"><a href="#"><img src="Images/top/menu_07.gif" width="95" name="image7" height="119" border="0" onMouseMove="move(this,'7')" onMouseout="out(this,'7')"></a></td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%" height="193"  border="0" cellpadding="-2" cellspacing="-2">
+        <tr>
+          <td width="38%">&nbsp;</td>
+          <td width="43%">&nbsp;</td>
+          <td width="19%" valign="bottom">&nbsp;</td>
+        </tr>
+      </table>
+</td>
+  </tr>
+</table>
+<table width="871" border="0" align="center" cellpadding="-2" cellspacing="-2" class="tableBorder">
+  <tr>
+    <td valign="top"><table width="100%"  border="0" cellspacing="-2" cellpadding="-2">
+        <tr>
+          <td height="238" valign="top"><table width="100%" height="507"  border="0" cellpadding="-2" cellspacing="-2">
+            <tr>
+              <td width="17" valign="top"><table width="100%" height="439"  border="0" cellpadding="-2" cellspacing="-2">
+                <tr>
+                  <td width="200" height="225" background="Images/welcome.gif">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="200" height="190" background="Images/left_bottom.gif"></td>
+                </tr>
+                <tr>
+                  <td height="9" background="Images/left_line.gif"></td>
+                </tr>
+              </table></td>
+              <td valign="top"><table width="100%" height="205"  border="0" cellpadding="-2" cellspacing="-2">
+                <tr>
+                  <td width="188" height="212" valign="top" background="Images/menu_son.gif"><table width="100%" height="206"  border="0" cellpadding="-2" cellspacing="-2" style="color:#BABECF">
+                    <tr>
+                      <td width="19%" height="62">&nbsp;</td>
+                      <td width="81%">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td height="27">&nbsp;</td>
+                      <td height="27" valign="bottom"><a href="guidance.asp">领导致词
+					  </a></td>
+                    </tr>
+                    <tr>
+                      <td height="22">&nbsp;</td>
+                      <td height="22" valign="bottom">&nbsp;&nbsp;&nbsp;公司简介</td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td height="27" valign="bottom"><a href="marketing.asp">营销网络</a></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td height="26" valign="bottom"><a href="#">展望未来</a></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table>
+                <table width="100%" height="239"  border="0" cellpadding="-2" cellspacing="-2">
+                  <tr>
+                    <td height="30" valign="top"><img src="Images/friend.gif" width="188" height="30"></td>
+                  </tr>
+                  <tr>
+                    <td height="67" background="Images/friend_01.gif"><div align="center"><img src="Images/Link/KJXXLogo.gif" width="184" height="66"></div></td>
+                  </tr>
+                  <tr>
+                    <td height="72" background="Images/friend_02.gif"><div align="center"><img src="Images/Link/MRLogo.gif" width="184" height="66"></div></td>
+                  </tr>
+                  <tr>
+                    <td height="70" background="Images/friend_01.gif"><div align="center"><img src="Images/Link/ZQLogo.gif" width="184" height="66" border="0"></div></td>
+                  </tr>
+                </table>
+                <img src="Images/friend_03.gif" width="188" height="27"></td>
+              <td width="666" valign="top" background="Images/Top_05.gif"><table width="100%" height="135"  border="0" cellpadding="-2" cellspacing="-2" background="Images/Top_04.gif">
+                  <tr valign="top">
+                    <td height="61" colspan="2"><table width="100%"  border="0" cellspacing="-2" cellpadding="-2">
+                        <tr>
+                          <td width="73%" height="24">&nbsp;</td>
+                          <td width="27%" style="color:#313D99">&gt; 公司介绍 &gt; 公司简介 &gt;&gt; </td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td width="24%" height="52">&nbsp;</td>
+                    <td width="76%" style="color:#5D5D5D">长春市明日实业有限公司<br>
+            Chang Chun Ming Ri Industry Co.,Ltd</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">&nbsp;</td>
+                  </tr>
+              </table>
+                
+                <table width="98%" height="308"  border="0" cellpadding="-2" cellspacing="-2" style="margin:5pt">
+                  <tr>
+                    <td valign="top"><table width="340" height="261" border="0" align="right" cellpadding="-2" cellspacing="-2">
+                      <tr>
+                        <td><div align="center"><img src="Images/profile1.GIF" width="337" height="235" border="1"></div></td>
+                      </tr>
+                      <tr>
+                        <td height="24"><div align="center">明日实业概貌图</div></td>
+                      </tr>
+                    </table>                      　　
+                      长春市明日实业有限公司，始建于1980年，主要从事热水锅炉和暖气管道全自动排汽阀的生产和销售。 <br>
+　　 公司主导产品“明日”牌全自动排汽阀获得多项国家专利，1988年经吉林省技术监督局认定其产品标准已达到国际水平，并历次被吉林省工商局评为吉林省名牌产品。 <br>
+　十余年来企业以雄厚的技术研发实力、科学的管理制度、过硬的产品质量、不断的创新精神，使明日实业成为行业的领头雁，经受住了所有用户的考验，十九年来无一起产品质量投诉。“明日”牌排汽阀已成为广大用户心目中高品质、高质量的象征，令消费者真正感到物有所值。我们敢于向所有用户承诺：凡我企业生产的排汽阀，在质保期间，如有质量问题，包赔损失。“明日”牌已成为众企业最宝贵的无形资产，也给企业带来了巨大的社会效益和经济效益。 <br>
+　　 2001年，公司领导高瞻远瞩，在行业内率先带领公司通过ISO9001：2000质量管理体系认证，为进一步拓宽国内市场和进军国际市场开辟了通衢大道。不论过去、现在还是将来，明日人将秉承“坚韧、创新、博学、笃行”的企业文化，重质量、守承诺、求发展、敢创新，争做行业领头雁。将明日实业的产品做大、做精，争取更大的社会效益和经济效益，回报社会，回报人民。 </td>
+                  </tr>
+                </table>                <table width="100%" height="56"  border="0" cellpadding="-2" cellspacing="-2">
+                  <tr>
+                    <td height="56" bgcolor="#FFFFFF"><div align="center" style="color:#666666 ">本站请用IE5.0或以上版本浏览，1024*768为最佳效果<br>
+            CopyRight &copy; 2007 长春市明日实业有限公司<br>
+            </div></td>
+                    <td width="208"><img src="Images/re_top.gif" width="208" height="56" border="0" usemap="#Map"></td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table><table width="100%"  border="0" cellspacing="-2" cellpadding="-2">
+  <tr>
+    <td height="8" background="Images/bottom.gif"></td>
+  </tr>
+</table></td>
+  </tr>
+</table>
+<script language="javascript">
+	function manage()
+	{
+	var w=window.open('login.htm','','fullscreen=1,scrollbars=0');
+	}
+</script>
+<map name="Map">
+  <area shape="rect" coords="73,13,135,43" href="#" onClick="manage()">
+</map>
+</body>
+</html>
